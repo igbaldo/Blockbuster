@@ -1,0 +1,19 @@
+Movie
+	ID
+	Name
+	Desc
+	Duration
+	Year   -- combo de años
+	Rate   -- numerico con rango
+	Genre ID
+	Director
+	Cast
+
+	Opcionales:
+		Image
+		TrailerLink
+
+
+Genre
+	ID	
+	Desc
