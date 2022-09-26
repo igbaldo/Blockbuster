@@ -11,7 +11,7 @@ namespace BlockBuster.Models
     public class Movie
     {
 
-        //[ScaffoldColumn(false)]
+        [ScaffoldColumn(false)]
         [Key]
         public int MovieID { get; set; }
 

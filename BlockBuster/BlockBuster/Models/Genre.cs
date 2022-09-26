@@ -11,7 +11,7 @@ namespace BlockBuster.Models
     public class Genre
     {
 
-        //[ScaffoldColumn(false)]
+        [ScaffoldColumn(false)]
         [Key]
         public int GenreID { get; set; }
 
