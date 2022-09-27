@@ -12,14 +12,14 @@ namespace BlockBuster.Models
     public class Movie
     {
         [Key]
-        [Column("Id")]
+        //[Column("Id")]
         public int MovieID { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
+        //[Column(TypeName = "nvarchar(100)")]
         [Required, StringLength(100), Display(Name = "Name")]
         public string Title { get; set; }
 
-        [Column(TypeName = "nvarchar(1000)")]
+        //[Column(TypeName = "nvarchar(1000)")]
         [Required, StringLength(10000), Display(Name = "Movie Description"), DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
@@ -38,7 +38,7 @@ namespace BlockBuster.Models
 
         public string TrailerLink { get; set; }
 
-        [Required]
+        //[Required]
         public virtual ICollection<Genre> Genres { get; set; }
     }
 }

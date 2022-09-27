@@ -5,9 +5,10 @@ namespace BlockBuster.Models
     public class MovieGenre
     {
         [Key]
+        public int MovieGenreID { get; set; }
+
         public int MovieID { get; set; }
 
-        [Key]
         public int GenreID { get; set; }
 
 

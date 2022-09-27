@@ -21,7 +21,7 @@ namespace BlockBuster
 
 
             // Initialize the product database.
-            Database.SetInitializer(new DatabaseInitializer());
+            Database.SetInitializer(new MoviesDatabaseInitializer());
         }
     }
 }

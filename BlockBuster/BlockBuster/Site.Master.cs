@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BlockBuster.Models;
 
 namespace BlockBuster
 {
@@ -12,6 +13,13 @@ namespace BlockBuster
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public IEnumerable<Movie> GetMovies()
+        {
+            var _db = new BlockbusterContext();
+            IQueryable<Movie> query = _db.Movies;
+            return query;
         }
     }
 }
