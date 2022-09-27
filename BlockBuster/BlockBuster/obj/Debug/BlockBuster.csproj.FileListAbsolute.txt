@@ -150,3 +150,7 @@ C:\Users\ibaldo\source\Blockbuster\BlockBuster\BlockBuster\obj\Debug\BlockBuster
 C:\Users\ibaldo\source\Blockbuster\BlockBuster\BlockBuster\obj\Debug\BlockBuster.csproj.CopyComplete
 C:\Users\ibaldo\source\Blockbuster\BlockBuster\BlockBuster\obj\Debug\BlockBuster.dll
 C:\Users\ibaldo\source\Blockbuster\BlockBuster\BlockBuster\obj\Debug\BlockBuster.pdb
+C:\Users\Ibaldo\Documents\UNLAM\4to Cuatrimestre\Programacion Avanzada\Introduccion\Blockbuster\BlockBuster\BlockBuster\bin\EntityFramework.dll
+C:\Users\Ibaldo\Documents\UNLAM\4to Cuatrimestre\Programacion Avanzada\Introduccion\Blockbuster\BlockBuster\BlockBuster\bin\EntityFramework.SqlServer.dll
+C:\Users\Ibaldo\Documents\UNLAM\4to Cuatrimestre\Programacion Avanzada\Introduccion\Blockbuster\BlockBuster\BlockBuster\bin\EntityFramework.xml
+C:\Users\Ibaldo\Documents\UNLAM\4to Cuatrimestre\Programacion Avanzada\Introduccion\Blockbuster\BlockBuster\BlockBuster\bin\EntityFramework.SqlServer.xml
