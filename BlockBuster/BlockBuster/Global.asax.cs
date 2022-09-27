@@ -19,7 +19,9 @@ namespace BlockBuster
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<BlockbusterContext>(new DropCreateDatabaseAlways<BlockbusterContext>());
+
+            // Initialize the product database.
+            Database.SetInitializer(new DatabaseInitializer());
         }
     }
 }
