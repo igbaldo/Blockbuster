@@ -7,6 +7,11 @@ namespace BlockBuster.Models
 {
     public class Genre
     {
+        public Genre()
+        {
+            this.Movies = new HashSet<Movie>();
+        }
+
         [Key]
         //[Column("Id")]
         public int GenreID { get; set; }
