@@ -14,12 +14,5 @@ namespace BlockBuster
         {
 
         }
-
-        public IEnumerable<Movie> GetMovies()
-        {
-            var _db = new BlockbusterContext();
-            IQueryable<Movie> query = _db.Movies;
-            return query;
-        }
     }
 }

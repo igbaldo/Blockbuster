@@ -11,6 +11,11 @@ namespace BlockBuster.Models
 {
     public class Movie
     {
+        public Movie()
+        {
+            this.Genres = new HashSet<Genre>();
+        }
+
         [Key]
         //[Column("Id")]
         public int MovieID { get; set; }
@@ -40,5 +45,8 @@ namespace BlockBuster.Models
 
         //[Required]
         public virtual ICollection<Genre> Genres { get; set; }
+
+        //public int GenreId { get; set; }
+        //public virtual Genre Genre { get; set; }
     }
 }

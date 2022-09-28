@@ -50,34 +50,18 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/MovieList">Movies</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/MovieList">Products</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div id="TitleContent" style="text-align: center">
             <a runat="server" href="~/">
-                <asp:Image  ID="Image1" runat="server" ImageUrl="~/Images/Blockbuster_logo.svg.jpg" BorderStyle="None" />
+                <asp:Image  ID="Image1" runat="server" ImageUrl="~/Images/Blockbuster_logo.png" BorderStyle="None" Width="400px" Height="200px" />
             </a>  
             <br />  
-        </div>
-        <div id="CategoryMenu" style="text-align: center">       
-            <asp:ListView ID="categoryList"  
-                          ItemType="BlockBuster.Models.Movie" 
-                          runat="server"
-                          SelectMethod="GetMovies" >
-                <ItemTemplate>
-                    <b style="font-size: large; font-style: normal">
-                        <a href="/MovieList.aspx?id=<%#: Item.MovieID %>">
-                            <%#: Item.Title %>
-                        </a>
-                    </b>
-                </ItemTemplate>
-                <ItemSeparatorTemplate>  |  </ItemSeparatorTemplate>
-            </asp:ListView>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -22,6 +22,18 @@ namespace BlockBuster
 
             // Initialize the product database.
             Database.SetInitializer(new MoviesDatabaseInitializer());
+
+            // Add Routes.
+            RegisterCustomRoutes(RouteTable.Routes);
+        }
+
+        void RegisterCustomRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute(
+                "MovieList",
+                "Movielist",
+                "~/MovieList.aspx"
+            );
         }
     }
 }
