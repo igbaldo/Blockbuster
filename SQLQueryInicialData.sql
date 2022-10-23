@@ -5,13 +5,9 @@ values ('The Terminator','En el año 2029, después de devastar la Tierra y esclav
 James Cameron','Arnold Schwarzenegger - Linda Hamilton',null,1)
 
 insert into Genre
-values ('Science fiction')
+values ('Science fiction'),
+('Terror'),
+('Suspense')
 
 insert into MovieGenre
 values (1,1)
-
-select *
-from Movie
-
-select *
-from Genre
