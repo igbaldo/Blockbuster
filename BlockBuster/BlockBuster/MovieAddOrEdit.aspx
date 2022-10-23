@@ -10,5 +10,7 @@
 
     <label>Year</label>
     <asp:DropDownList ID="YearsList" runat="server"></asp:DropDownList>
+
+    <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
 </asp:Content>
 
