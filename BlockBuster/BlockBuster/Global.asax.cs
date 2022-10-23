@@ -1,5 +1,4 @@
-﻿using BlockBuster.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -21,7 +20,7 @@ namespace BlockBuster
 
 
             // Initialize the product database.
-            Database.SetInitializer(new MoviesDatabaseInitializer());
+            //Database.SetInitializer(new MoviesDatabaseInitializer());
 
             // Add Routes.
             RegisterCustomRoutes(RouteTable.Routes);

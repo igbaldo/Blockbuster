@@ -10,7 +10,7 @@
 
             <asp:ListView ID="movieList" runat="server" 
                 DataKeyNames="MovieID" GroupItemCount="4"
-                ItemType="BlockBuster.Models.Movie" SelectMethod="GetMovies">
+                ItemType="BlockBuster.Movie" SelectMethod="GetMovies">
                 <EmptyDataTemplate>
                     <table >
                         <tr>

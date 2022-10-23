@@ -4,7 +4,7 @@
 
     <div id="MoviesMenu" style="text-align: center">       
             <asp:ListView ID="movieList"  
-                          ItemType="BlockBuster.Models.Movie" 
+                          ItemType="BlockBuster.Movie" 
                           runat="server"
                           SelectMethod="GetMovies" >
                 <ItemTemplate>

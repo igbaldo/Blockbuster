@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlockBusterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenreName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenre_Genre" FromRole="Genre" ToRole="MovieGenre" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="MovieID" />
+    </Key>
+    <Property Name="MovieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="DateTime" Precision="3" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Rate" Type="Int32" />
+    <Property Name="Director" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cast" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TrailerLink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenre_Movie" FromRole="Movie" ToRole="MovieGenre" />
+  </EntityType>
+  <EntityType Name="MovieGenre">
+    <Key>
+      <PropertyRef Name="MovieGenreId" />
+    </Key>
+    <Property Name="MovieGenreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenreID" Type="Int32" />
+    <Property Name="MovieID" Type="Int32" />
+    <NavigationProperty Name="Genre" Relationship="Self.FK_MovieGenre_Genre" FromRole="MovieGenre" ToRole="Genre" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_MovieGenre_Movie" FromRole="MovieGenre" ToRole="Movie" />
+  </EntityType>
+  <Association Name="FK_MovieGenre_Genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreID" />
+      </Principal>
+      <Dependent Role="MovieGenre">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieGenre_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
+    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieGenre">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlockBusterContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Genres" EntityType="Self.Genre" />
+    <EntitySet Name="Movies" EntityType="Self.Movie" />
+    <EntitySet Name="MovieGenres" EntityType="Self.MovieGenre" />
+    <AssociationSet Name="FK_MovieGenre_Genre" Association="Self.FK_MovieGenre_Genre">
+      <End Role="Genre" EntitySet="Genres" />
+      <End Role="MovieGenre" EntitySet="MovieGenres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieGenre_Movie" Association="Self.FK_MovieGenre_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieGenre" EntitySet="MovieGenres" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

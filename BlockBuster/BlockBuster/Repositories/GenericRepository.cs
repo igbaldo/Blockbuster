@@ -1,5 +1,4 @@
-﻿using BlockBuster.Models;
-using BlockBuster.Repositories.Interfaces;
+﻿using BlockBuster.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -13,7 +12,7 @@ namespace BlockBuster.Repositories
     {
         public void Add(TEntity entity)
         {
-            using (var context = new BlockbusterContext())
+            using (var context = new BlockBusterContext())
             {
                 context.Set<TEntity>().Add(entity);
                 context.SaveChanges();
@@ -22,7 +21,7 @@ namespace BlockBuster.Repositories
 
         public IEnumerable<TEntity> GetAll()
         {
-            using (var context = new BlockbusterContext())
+            using (var context = new BlockBusterContext())
             {
                 return context.Set<TEntity>().ToList();
             }
@@ -30,7 +29,7 @@ namespace BlockBuster.Repositories
 
         public TEntity GetById(int id)
         {
-            using (var context = new BlockbusterContext())
+            using (var context = new BlockBusterContext())
             {
                 return context.Set<TEntity>().Find(id);
             }
@@ -38,7 +37,7 @@ namespace BlockBuster.Repositories
 
         public void Update(TEntity entity)
         {
-            using (var context = new BlockbusterContext())
+            using (var context = new BlockBusterContext())
             {
                 context.Set<TEntity>().AddOrUpdate(entity);
                 context.SaveChanges();

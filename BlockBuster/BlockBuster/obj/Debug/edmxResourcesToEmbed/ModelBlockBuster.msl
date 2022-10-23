@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BlockBusterModelStoreContainer" CdmEntityContainer="BlockBusterContext">
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="BlockBusterModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="GenreName" ColumnName="GenreName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="BlockBusterModel.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Cast" ColumnName="Cast" />
+          <ScalarProperty Name="TrailerLink" ColumnName="TrailerLink" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieGenres">
+      <EntityTypeMapping TypeName="BlockBusterModel.MovieGenre">
+        <MappingFragment StoreEntitySet="MovieGenre">
+          <ScalarProperty Name="MovieGenreId" ColumnName="MovieGenreId" />
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

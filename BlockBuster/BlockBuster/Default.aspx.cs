@@ -1,4 +1,5 @@
-﻿using BlockBuster.Models;
+﻿using BlockBuster.Repositories.Interfaces;
+using BlockBuster.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace BlockBuster
 {
     public partial class _Default : Page
     {
+        private readonly IGenericRepository<Movie> _movieRepository;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,9 +19,9 @@ namespace BlockBuster
 
         public IEnumerable<Movie> GetMovies()
         {
-            var _db = new BlockbusterContext();
-            IQueryable<Movie> query = _db.Movies;
-            return query.OrderBy(arg => Guid.NewGuid()).Take(4);
+            MovieService movieService = new MovieService(_movieRepository);
+            movieService.GetAll();
+            return movieService.GetAll();
         }
     }
 }

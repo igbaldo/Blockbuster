@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlockBusterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenreName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="MovieID" />
+    </Key>
+    <Property Name="MovieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Duration" Type="datetime" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Rate" Type="int" />
+    <Property Name="Director" Type="varchar" MaxLength="100" />
+    <Property Name="Cast" Type="varchar" MaxLength="200" />
+    <Property Name="TrailerLink" Type="varchar" MaxLength="200" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovieGenre">
+    <Key>
+      <PropertyRef Name="MovieGenreId" />
+    </Key>
+    <Property Name="MovieGenreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenreID" Type="int" />
+    <Property Name="MovieID" Type="int" />
+  </EntityType>
+  <Association Name="FK_MovieGenre_Genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreID" />
+      </Principal>
+      <Dependent Role="MovieGenre">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieGenre_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
+    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieGenre">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlockBusterModelStoreContainer">
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieGenre" EntityType="Self.MovieGenre" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MovieGenre_Genre" Association="Self.FK_MovieGenre_Genre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="MovieGenre" EntitySet="MovieGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieGenre_Movie" Association="Self.FK_MovieGenre_Movie">
+      <End Role="Movie" EntitySet="Movie" />
+      <End Role="MovieGenre" EntitySet="MovieGenre" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

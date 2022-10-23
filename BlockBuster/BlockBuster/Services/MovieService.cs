@@ -1,4 +1,4 @@
-﻿using BlockBuster.Models;
+﻿using BlockBuster.Repositories;
 using BlockBuster.Repositories.Interfaces;
 using BlockBuster.Services.Interfaces.Generics;
 using System;
@@ -8,12 +8,12 @@ using System.Web;
 
 namespace BlockBuster.Services
 {
-    public class MovieService : IAdd<Movie>, IUpdate<Movie>, IDelete<Movie>, IGet<Movie>
+    public class MovieService : IGenericServices<Movie>
     {
-        private readonly IGenericRepository<Movie> _movieRepository;
+        private GenericRepository<Movie> _movieRepository;
         public MovieService(IGenericRepository<Movie> movieRepository)
         {
-            _movieRepository = movieRepository;
+            this._movieRepository = new GenericRepository<Movie>();
         }
         public void Add(Movie entity)
         {
@@ -22,7 +22,9 @@ namespace BlockBuster.Services
 
         public void Delete(int entityId)
         {
-            throw new NotImplementedException();
+            Movie movie = _movieRepository.GetById(entityId);
+            movie.Active = false;
+            _movieRepository.Update(movie);
         }
 
         public IEnumerable<Movie> GetAll()
