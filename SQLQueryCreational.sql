@@ -16,6 +16,7 @@ CREATE TABLE [dbo].[Movie](
 	[Cast] [varchar](200) NULL,
 	[TrailerLink] [varchar](200) NULL,
 	[Active] [bit] NOT NULL,
+	[Image] [varchar](200) NULL,
  CONSTRAINT [PK_Movie] PRIMARY KEY CLUSTERED 
 (
 	[MovieID] ASC

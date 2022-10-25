@@ -26,6 +26,7 @@
           <Property Name="Cast" Type="varchar" MaxLength="200" />
           <Property Name="TrailerLink" Type="varchar" MaxLength="200" />
           <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="MovieGenre">
           <Key>
@@ -99,6 +100,7 @@
           <Property Name="Cast" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="TrailerLink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
+		  <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false"/>
           <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenre_Movie" FromRole="Movie" ToRole="MovieGenre" />
         </EntityType>
         <EntityType Name="MovieGenre">
@@ -175,6 +177,7 @@
                 <ScalarProperty Name="Cast" ColumnName="Cast" />
                 <ScalarProperty Name="TrailerLink" ColumnName="TrailerLink" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

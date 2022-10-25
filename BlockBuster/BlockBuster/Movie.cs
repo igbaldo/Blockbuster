@@ -30,6 +30,7 @@ namespace BlockBuster
         public string Cast { get; set; }
         public string TrailerLink { get; set; }
         public bool Active { get; set; }
+        public string Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }

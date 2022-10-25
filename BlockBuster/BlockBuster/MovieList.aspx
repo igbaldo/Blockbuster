@@ -27,35 +27,16 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <td runat="server">
-                        <table>
-                            <tr>
-                                <td>
-                                    <a href="MovieDetails.aspx?movieID=<%#:Item.MovieID%>">
-                                       <%-- <img src="/Catalog/Images/Thumbs/<%#:Item.ImagePath%>"
-                                            width="100" height="75" style="border: solid" /></a>--%>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="MovieDetails.aspx?productID=<%#:Item.MovieID%>">
-                                        <span>
-                                            <%#:Item.Title%>
-                                        </span>
-                                    </a>
-<%--                                    <br />
-                                    <span>
-                                        <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
-                                    </span>
-                                    <br />--%>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </table>
-                        </p>
-                    </td>
+                    <a a href="MovieDetails.aspx?movieID=<%#:Item.MovieID%>"></a>
+                        <figure class="snip0051">
+	                        <img src="https://media.vandalsports.com/master/5-2021/202151712422_1.jpg" alt="sample1"/>	
+	                        <figcaption>
+		                        <h2><%#:Item.Title%></h2> 
+		                        <p class="line-clamp module"><%#:Item.Description%></p>
+                                <a href="#" class="verMas">Ver más</a>
+	                        </figcaption>	
+                        </figure>
+                    </a>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <table style="width:100%;">

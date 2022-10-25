@@ -21,6 +21,7 @@
     <Property Name="Cast" Type="varchar" MaxLength="200" />
     <Property Name="TrailerLink" Type="varchar" MaxLength="200" />
     <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Image" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="MovieGenre">
     <Key>
