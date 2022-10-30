@@ -258,7 +258,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\GenreService.cs" />
+    <Compile Include="Services\GenreService.cs" />
     <Compile Include="Repositories\Interfaces\IGenericRepository.cs" />
     <Compile Include="Services\Interfaces\Generics\IGenericServices.cs" />
     <Compile Include="Services\MovieService.cs" />
