@@ -1,6 +1,7 @@
 DROP DATABASE BlockBuster
 
 CREATE DATABASE BlockBuster
+GO 
 
 USE BlockBuster
 GO
