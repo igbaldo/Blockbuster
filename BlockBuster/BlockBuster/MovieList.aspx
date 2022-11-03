@@ -27,7 +27,7 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <a a href="MovieDetails.aspx?movieID=<%#:Item.MovieID%>"></a>
+                    <a href="MovieAddOrEdit.aspx?movieId=<%#:Item.MovieID%>">
                         <figure class="snip0051">
 	                        <img src="https://media.vandalsports.com/master/5-2021/202151712422_1.jpg" alt="sample1"/>	
 	                        <figcaption>

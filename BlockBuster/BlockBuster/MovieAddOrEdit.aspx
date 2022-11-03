@@ -2,9 +2,7 @@
 
 <asp:Content ID="AbmContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <label>Id</label>
-    <asp:TextBox ID="MovieId" runat="server"></asp:TextBox>
-    <br />
+    <asp:HiddenField ID="Id" runat="server" />
 
     <label>Title</label>
     <asp:TextBox ID="TitleTxt" runat="server"></asp:TextBox>
@@ -22,7 +20,7 @@
     <br />
 
     <label>Year</label>
-    <asp:DropDownList ID="YearsList" runat="server" OnSelectedIndexChanged="YearsList_SelectedIndexChanged"></asp:DropDownList>
+    <asp:DropDownList ID="YearsList" runat="server"></asp:DropDownList>
 
     <br />
 

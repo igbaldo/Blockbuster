@@ -1,22 +1,52 @@
-﻿using BlockBuster.Repositories.Interfaces;
+﻿using Antlr.Runtime.Misc;
+using BlockBuster.Repositories.Interfaces;
 using BlockBuster.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BlockBuster
 {
     public partial class MovieAddOrEdit : Page
     {
+        #region Props
+
         private readonly IGenericRepository<Movie> _movieRepository;
-        
+        private readonly MovieService _movieService;
+
+        #endregion
+
+        #region Constructor
+
+        public MovieAddOrEdit()
+        {
+            _movieService = new MovieService(_movieRepository);
+        }
+
+        #endregion
+
+        #region Events
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<int> years = new List<int>() { 2000,2010,2020};
-           
+            if (!Page.IsPostBack)
+            {
+                //SetMaxLengthFields();
+                //LoadCombos();
+
+                if (Request.QueryString["movieId"] != null)
+                {
+                    LoadMovie(Convert.ToInt32(Request.QueryString["movieId"]));
+                }
+            }
+
+            List<int> years = new List<int>() { 2000, 2010, 2020 };
+
             foreach (int y in years)
             {
                 var item = new ListItem
@@ -30,8 +60,6 @@ namespace BlockBuster
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            MovieService movieService = new MovieService(_movieRepository);
-            
             Movie movie = new Movie();
             movie.Title = TitleTxt.Text;
             movie.Description = DescriptionTxt.Text;
@@ -44,16 +72,39 @@ namespace BlockBuster
             movie.Image = ImageUrl.Text;
             movie.Active = true;
 
-            movieService.Save(movie);
+            _movieService.Save(movie);
         }
 
         protected void Delete_Click(object sender, EventArgs e)
         {
-            MovieService movieService = new MovieService(_movieRepository);
-
-            int.TryParse(MovieId.Text, out int id);
-
-            movieService.Delete(id);
+            _movieService.Delete(Convert.ToInt32(Id.Value));
         }
+
+        #endregion
+
+        #region Private Methods
+
+        private void LoadMovie(int movieId)
+        {
+            Movie movie = new Movie();
+            movie = _movieService.GetById(movieId);
+            BindFields(movie);
+        }
+
+        private void BindFields(Movie movie)
+        {
+            Id.Value = movie.MovieID.ToString();
+            TitleTxt.Text = movie.Title;
+            DescriptionTxt.Text = movie.Description;
+            DurationTxt.Text = movie.Duration.ToString();
+            YearsList.Text = movie.Year.ToString();
+            RateTxt.Text = movie.Rate.ToString();
+            DirectorTxt.Text = movie.Director;
+            CastTxt.Text = movie.Cast;
+            TrailerLinkTxt.Text = movie.TrailerLink;
+            ImageUrl.Text = movie.Image;
+        }
+
+        #endregion
     }
 }
