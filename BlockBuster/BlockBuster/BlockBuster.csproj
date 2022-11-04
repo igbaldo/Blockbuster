@@ -262,9 +262,6 @@
     <Compile Include="Views\Movie\MovieAddOrEdit.aspx.designer.cs">
       <DependentUpon>MovieAddOrEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MovieGenre.cs">
-      <DependentUpon>ModelBlockBuster.tt</DependentUpon>
-    </Compile>
     <Compile Include="Views\Movie\MovieList.aspx.cs">
       <DependentUpon>MovieList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

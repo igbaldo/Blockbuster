@@ -17,13 +17,13 @@ namespace BlockBuster
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Genre()
         {
-            this.MovieGenres = new HashSet<MovieGenre>();
+            this.Movies = new HashSet<Movie>();
         }
     
         public int GenreID { get; set; }
         public string GenreName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

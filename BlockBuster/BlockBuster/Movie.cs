@@ -14,12 +14,6 @@ namespace BlockBuster
     
     public partial class Movie
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Movie()
-        {
-            this.MovieGenres = new HashSet<MovieGenre>();
-        }
-    
         public int MovieID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -31,8 +25,8 @@ namespace BlockBuster
         public string TrailerLink { get; set; }
         public bool Active { get; set; }
         public string Image { get; set; }
+        public Nullable<int> GenreID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
+        public virtual Genre Genre { get; set; }
     }
 }
