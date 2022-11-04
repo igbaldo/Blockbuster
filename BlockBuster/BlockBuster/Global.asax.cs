@@ -23,6 +23,7 @@ namespace BlockBuster
 
         void RegisterCustomRoutes(RouteCollection routes)
         {
+            routes.MapPageRoute("", "", "~/Views/Default.aspx");
             routes.MapPageRoute("About", "About", "~/Views/About.aspx");
             routes.MapPageRoute("Contact", "Contact", "~/Views/Contact.aspx");
             routes.MapPageRoute("Default", "Default", "~/Views/Default.aspx");
