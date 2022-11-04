@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 
 namespace BlockBuster
 {
@@ -28,11 +23,13 @@ namespace BlockBuster
 
         void RegisterCustomRoutes(RouteCollection routes)
         {
-            routes.MapPageRoute(
-                "MovieList",
-                "Movielist",
-                "~/MovieList.aspx"
-            );
+            routes.MapPageRoute("About", "About", "~/Views/About.aspx");
+            routes.MapPageRoute("Contact", "Contact", "~/Views/Contact.aspx");
+            routes.MapPageRoute("Default", "Default", "~/Views/Default.aspx");
+            routes.MapPageRoute("MovieList","Movielist","~/Views/Movie/MovieList.aspx");
+            routes.MapPageRoute("MovieAddOrEdit","MovieAddOrEdit","~/Views/Movie/MovieAddOrEdit.aspx");
+            routes.MapPageRoute("GenreList", "GenreList", "~/Views/Genre/GenreList.aspx");
+            routes.MapPageRoute("GenreAddOrEdit", "GenreAddOrEdit", "~/Views/Genre/GenreAddOrEdit.aspx");
         }
     }
 }

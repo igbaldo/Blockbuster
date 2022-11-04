@@ -11,7 +11,6 @@ namespace BlockBuster
 {
     public partial class _Default : Page
     {
-        private readonly IGenericRepository<Movie> _movieRepository;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,7 +18,7 @@ namespace BlockBuster
 
         public IEnumerable<Movie> GetMovies()
         {
-            MovieService movieService = new MovieService(_movieRepository);
+            MovieService movieService = new MovieService();
             movieService.GetAll();
             return movieService.GetAll();
         }

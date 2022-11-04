@@ -1,14 +1,9 @@
-﻿using Antlr.Runtime.Misc;
-using BlockBuster.Repositories.Interfaces;
+﻿using BlockBuster.Repositories.Interfaces;
 using BlockBuster.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BlockBuster
 {
@@ -16,7 +11,6 @@ namespace BlockBuster
     {
         #region Props
 
-        private readonly IGenericRepository<Movie> _movieRepository;
         private readonly MovieService _movieService;
 
         #endregion
@@ -25,7 +19,7 @@ namespace BlockBuster
 
         public MovieAddOrEdit()
         {
-            _movieService = new MovieService(_movieRepository);
+            _movieService = new MovieService();
         }
 
         #endregion
@@ -38,8 +32,9 @@ namespace BlockBuster
             {
                 //SetMaxLengthFields();
                 //LoadCombos();
+                var sdfsd = Request.QueryString["movieId"];
 
-                if (Request.QueryString["movieId"] != null)
+                if (Request.QueryString["movieId"] != null && Request.QueryString["movieId"] != "0")
                 {
                     LoadMovie(Convert.ToInt32(Request.QueryString["movieId"]));
                 }
@@ -61,6 +56,10 @@ namespace BlockBuster
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             Movie movie = new Movie();
+
+            if (Id.Value != "")
+                movie.MovieID = Convert.ToInt32(Id.Value);
+
             movie.Title = TitleTxt.Text;
             movie.Description = DescriptionTxt.Text;
             movie.Duration = Convert.ToDateTime(DurationTxt.Text);

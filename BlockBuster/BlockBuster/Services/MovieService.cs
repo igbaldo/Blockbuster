@@ -12,7 +12,7 @@ namespace BlockBuster.Services
     {
         private GenericRepository<Movie> _movieRepository;
 
-        public MovieService(IGenericRepository<Movie> movieRepository)
+        public MovieService()
         {
             this._movieRepository = new GenericRepository<Movie>();
         }

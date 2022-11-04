@@ -10,7 +10,8 @@ namespace BlockBuster.Repositories
     public class GenreService : IGenericServices<Genre>
     {
         private GenericRepository<Genre> _genreRepository;
-        public GenreService(IGenericRepository<Movie> movieRepository)
+
+        public GenreService()
         {
             this._genreRepository = new GenericRepository<Genre>();
         }
@@ -36,7 +37,15 @@ namespace BlockBuster.Repositories
 
         public void Update(Genre entity)
         {
-            throw new NotImplementedException();
+            _genreRepository.Update(entity);
+        }
+
+        public void Save(Genre entity)
+        {
+            if (entity.GenreID != 0)
+                _genreRepository.Update(entity);
+            else
+                _genreRepository.Add(entity);
         }
     }
 }

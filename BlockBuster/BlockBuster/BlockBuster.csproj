@@ -114,8 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Views\About.aspx" />
+    <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap-original.css" />
@@ -125,7 +125,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\blockbuster.svg" />
     <Content Include="Images\Blockbuster_logo.png" />
-    <Content Include="Default.aspx" />
+    <Content Include="Views\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -155,8 +155,10 @@
       <DependentUpon>ModelBlockBuster.edmx</DependentUpon>
       <LastGenOutput>ModelBlockBuster.cs</LastGenOutput>
     </Content>
-    <Content Include="MovieAddOrEdit.aspx" />
-    <Content Include="MovieList.aspx" />
+    <Content Include="Views\Genre\GenreAddOrEdit.aspx" />
+    <Content Include="Views\Genre\GenreList.aspx" />
+    <Content Include="Views\Movie\MovieAddOrEdit.aspx" />
+    <Content Include="Views\Movie\MovieList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -193,26 +195,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
+    <Compile Include="Views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
+    <Compile Include="Views\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
+    <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
+    <Compile Include="Views\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="Views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs">
@@ -239,21 +241,35 @@
     <Compile Include="Movie.cs">
       <DependentUpon>ModelBlockBuster.tt</DependentUpon>
     </Compile>
-    <Compile Include="MovieAddOrEdit.aspx.cs">
+    <Compile Include="Views\Genre\GenreAddOrEdit.aspx.cs">
+      <DependentUpon>GenreAddOrEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Genre\GenreAddOrEdit.aspx.designer.cs">
+      <DependentUpon>GenreAddOrEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Genre\GenreList.aspx.cs">
+      <DependentUpon>GenreList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Genre\GenreList.aspx.designer.cs">
+      <DependentUpon>GenreList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movie\MovieAddOrEdit.aspx.cs">
       <DependentUpon>MovieAddOrEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MovieAddOrEdit.aspx.designer.cs">
+    <Compile Include="Views\Movie\MovieAddOrEdit.aspx.designer.cs">
       <DependentUpon>MovieAddOrEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="MovieGenre.cs">
       <DependentUpon>ModelBlockBuster.tt</DependentUpon>
     </Compile>
-    <Compile Include="MovieList.aspx.cs">
+    <Compile Include="Views\Movie\MovieList.aspx.cs">
       <DependentUpon>MovieList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MovieList.aspx.designer.cs">
+    <Compile Include="Views\Movie\MovieList.aspx.designer.cs">
       <DependentUpon>MovieList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,7 +302,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Movie\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
