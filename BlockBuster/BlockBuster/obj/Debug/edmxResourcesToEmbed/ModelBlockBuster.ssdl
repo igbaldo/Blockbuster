@@ -12,10 +12,10 @@
       <PropertyRef Name="MovieID" />
     </Key>
     <Property Name="MovieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Description" Type="varchar(max)" />
-    <Property Name="Duration" Type="datetime" />
-    <Property Name="Year" Type="int" />
+    <Property Name="Duration" Type="varchar" MaxLength="3" />
+    <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="Rate" Type="int" />
     <Property Name="Director" Type="varchar" MaxLength="100" />
     <Property Name="Cast" Type="varchar" MaxLength="200" />

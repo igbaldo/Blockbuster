@@ -23,7 +23,7 @@ namespace BlockBuster.Repositories
         {
             using (var context = new BlockBusterContext())
             {
-                return context.Set<TEntity>().ToList();
+                return context.Set<TEntity>().Include("Genre").ToList();
             }
         }
 

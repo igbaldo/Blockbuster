@@ -17,10 +17,10 @@
             <PropertyRef Name="MovieID" />
           </Key>
           <Property Name="MovieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" />
-          <Property Name="Duration" Type="datetime" />
-          <Property Name="Year" Type="int" />
+          <Property Name="Duration" Type="varchar" MaxLength="3" />
+          <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Rate" Type="int" />
           <Property Name="Director" Type="varchar" MaxLength="100" />
           <Property Name="Cast" Type="varchar" MaxLength="200" />
@@ -74,10 +74,10 @@
             <PropertyRef Name="MovieID" />
           </Key>
           <Property Name="MovieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Duration" Type="DateTime" Precision="3" />
-          <Property Name="Year" Type="Int32" />
+          <Property Name="Duration" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
           <Property Name="Rate" Type="Int32" />
           <Property Name="Director" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Cast" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />

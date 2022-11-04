@@ -53,7 +53,7 @@ namespace BlockBuster
 
             movie.Title = TitleTxt.Text;
             movie.Description = DescriptionTxt.Text;
-            movie.Duration = Convert.ToDateTime(DurationTxt.Text);
+            movie.Duration = DurationTxt.Text;
             movie.Rate = Convert.ToInt16(RateTxt.Text);
             movie.Director = DirectorTxt.Text;
             movie.Cast = CastTxt.Text;
@@ -85,7 +85,7 @@ namespace BlockBuster
             Id.Value = movie.MovieID.ToString();
             TitleTxt.Text = movie.Title;
             DescriptionTxt.Text = movie.Description;
-            DurationTxt.Text = movie.Duration.ToString();
+            DurationTxt.Text = movie.Duration?.ToString();
             RateTxt.Text = movie.Rate.ToString();
             DirectorTxt.Text = movie.Director;
             CastTxt.Text = movie.Cast;
