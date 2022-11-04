@@ -1,4 +1,5 @@
-﻿using BlockBuster.Repositories.Interfaces;
+﻿using BlockBuster.Repositories;
+using BlockBuster.Repositories.Interfaces;
 using BlockBuster.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace BlockBuster
         #region Props
 
         private readonly MovieService _movieService;
+        private readonly GenreService _genreService;
 
         #endregion
 
@@ -20,6 +22,7 @@ namespace BlockBuster
         public MovieAddOrEdit()
         {
             _movieService = new MovieService();
+            _genreService = new GenreService();
         }
 
         #endregion
@@ -31,25 +34,13 @@ namespace BlockBuster
             if (!Page.IsPostBack)
             {
                 //SetMaxLengthFields();
-                //LoadCombos();
+                CmbLoad();
                 var sdfsd = Request.QueryString["movieId"];
 
                 if (Request.QueryString["movieId"] != null && Request.QueryString["movieId"] != "0")
                 {
                     LoadMovie(Convert.ToInt32(Request.QueryString["movieId"]));
                 }
-            }
-
-            List<int> years = new List<int>() { 2000, 2010, 2020 };
-
-            foreach (int y in years)
-            {
-                var item = new ListItem
-                {
-                    Text = y.ToString(),
-                    Value = y.ToString()
-                };
-                YearsList.Items.Add(item);
             }
         }
 
@@ -63,7 +54,6 @@ namespace BlockBuster
             movie.Title = TitleTxt.Text;
             movie.Description = DescriptionTxt.Text;
             movie.Duration = Convert.ToDateTime(DurationTxt.Text);
-            movie.Year = int.Parse(YearsList.Text);
             movie.Rate = Convert.ToInt16(RateTxt.Text);
             movie.Director = DirectorTxt.Text;
             movie.Cast = CastTxt.Text;
@@ -96,12 +86,25 @@ namespace BlockBuster
             TitleTxt.Text = movie.Title;
             DescriptionTxt.Text = movie.Description;
             DurationTxt.Text = movie.Duration.ToString();
-            YearsList.Text = movie.Year.ToString();
             RateTxt.Text = movie.Rate.ToString();
             DirectorTxt.Text = movie.Director;
             CastTxt.Text = movie.Cast;
             TrailerLinkTxt.Text = movie.TrailerLink;
             ImageUrl.Text = movie.Image;
+        }
+
+        private void CmbLoad()
+        {
+            foreach (var gen in _genreService.GetAll())
+            {
+                var item = new ListItem
+                {
+                    Value = gen.GenreID.ToString(),
+                    Text = gen.GenreName.ToString()
+                    
+                };
+                GenresList.Items.Add(item);
+            }
         }
 
         #endregion
