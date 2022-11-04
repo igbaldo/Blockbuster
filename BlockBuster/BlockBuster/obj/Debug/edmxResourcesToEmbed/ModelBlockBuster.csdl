@@ -6,8 +6,16 @@
     </Key>
     <Property Name="GenreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GenreName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenre_Genre" FromRole="Genre" ToRole="MovieGenre" />
+    <NavigationProperty Name="Movies" Relationship="BlockBusterModel.FK_MovieGenre" FromRole="Genre" ToRole="Movie" />
   </EntityType>
+  <EntityContainer Name="BlockBusterContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Genres" EntityType="Self.Genre" />
+    <EntitySet Name="Movies" EntityType="BlockBusterModel.Movie" />
+    <AssociationSet Name="FK_MovieGenre" Association="BlockBusterModel.FK_MovieGenre">
+      <End Role="Genre" EntitySet="Genres" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Movie">
     <Key>
       <PropertyRef Name="MovieID" />
@@ -23,53 +31,19 @@
     <Property Name="TrailerLink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Active" Type="Boolean" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenre_Movie" FromRole="Movie" ToRole="MovieGenre" />
-  </EntityType>
-  <EntityType Name="MovieGenre">
-    <Key>
-      <PropertyRef Name="MovieGenreId" />
-    </Key>
-    <Property Name="MovieGenreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GenreID" Type="Int32" />
-    <Property Name="MovieID" Type="Int32" />
-    <NavigationProperty Name="Genre" Relationship="Self.FK_MovieGenre_Genre" FromRole="MovieGenre" ToRole="Genre" />
-    <NavigationProperty Name="Movie" Relationship="Self.FK_MovieGenre_Movie" FromRole="MovieGenre" ToRole="Movie" />
+    <NavigationProperty Name="Genre" Relationship="BlockBusterModel.FK_MovieGenre" FromRole="Movie" ToRole="Genre" />
   </EntityType>
-  <Association Name="FK_MovieGenre_Genre">
-    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
-    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+  <Association Name="FK_MovieGenre">
+    <End Type="BlockBusterModel.Genre" Role="Genre" Multiplicity="0..1" />
+    <End Type="BlockBusterModel.Movie" Role="Movie" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Genre">
         <PropertyRef Name="GenreID" />
       </Principal>
-      <Dependent Role="MovieGenre">
+      <Dependent Role="Movie">
         <PropertyRef Name="GenreID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MovieGenre_Movie">
-    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
-    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Movie">
-        <PropertyRef Name="MovieID" />
-      </Principal>
-      <Dependent Role="MovieGenre">
-        <PropertyRef Name="MovieID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="BlockBusterContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Genres" EntityType="Self.Genre" />
-    <EntitySet Name="Movies" EntityType="Self.Movie" />
-    <EntitySet Name="MovieGenres" EntityType="Self.MovieGenre" />
-    <AssociationSet Name="FK_MovieGenre_Genre" Association="Self.FK_MovieGenre_Genre">
-      <End Role="Genre" EntitySet="Genres" />
-      <End Role="MovieGenre" EntitySet="MovieGenres" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MovieGenre_Movie" Association="Self.FK_MovieGenre_Movie">
-      <End Role="Movie" EntitySet="Movies" />
-      <End Role="MovieGenre" EntitySet="MovieGenres" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

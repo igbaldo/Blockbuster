@@ -12,25 +12,17 @@
     <EntitySetMapping Name="Movies">
       <EntityTypeMapping TypeName="BlockBusterModel.Movie">
         <MappingFragment StoreEntitySet="Movie">
-          <ScalarProperty Name="MovieID" ColumnName="MovieID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Duration" ColumnName="Duration" />
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Rate" ColumnName="Rate" />
-          <ScalarProperty Name="Director" ColumnName="Director" />
-          <ScalarProperty Name="Cast" ColumnName="Cast" />
-          <ScalarProperty Name="TrailerLink" ColumnName="TrailerLink" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MovieGenres">
-      <EntityTypeMapping TypeName="BlockBusterModel.MovieGenre">
-        <MappingFragment StoreEntitySet="MovieGenre">
-          <ScalarProperty Name="MovieGenreId" ColumnName="MovieGenreId" />
           <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TrailerLink" ColumnName="TrailerLink" />
+          <ScalarProperty Name="Cast" ColumnName="Cast" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="MovieID" ColumnName="MovieID" />
         </MappingFragment>
       </EntityTypeMapping>

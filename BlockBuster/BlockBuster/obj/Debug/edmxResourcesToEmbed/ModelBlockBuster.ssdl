@@ -22,50 +22,26 @@
     <Property Name="TrailerLink" Type="varchar" MaxLength="200" />
     <Property Name="Active" Type="bit" Nullable="false" />
     <Property Name="Image" Type="varchar" MaxLength="200" />
-  </EntityType>
-  <EntityType Name="MovieGenre">
-    <Key>
-      <PropertyRef Name="MovieGenreId" />
-    </Key>
-    <Property Name="MovieGenreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GenreID" Type="int" />
-    <Property Name="MovieID" Type="int" />
   </EntityType>
-  <Association Name="FK_MovieGenre_Genre">
+  <Association Name="FK_MovieGenre">
     <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
-    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Genre">
         <PropertyRef Name="GenreID" />
       </Principal>
-      <Dependent Role="MovieGenre">
+      <Dependent Role="Movie">
         <PropertyRef Name="GenreID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MovieGenre_Movie">
-    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
-    <End Role="MovieGenre" Type="Self.MovieGenre" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Movie">
-        <PropertyRef Name="MovieID" />
-      </Principal>
-      <Dependent Role="MovieGenre">
-        <PropertyRef Name="MovieID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="BlockBusterModelStoreContainer">
     <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MovieGenre" EntityType="Self.MovieGenre" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_MovieGenre_Genre" Association="Self.FK_MovieGenre_Genre">
+    <AssociationSet Name="FK_MovieGenre" Association="Self.FK_MovieGenre">
       <End Role="Genre" EntitySet="Genre" />
-      <End Role="MovieGenre" EntitySet="MovieGenre" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MovieGenre_Movie" Association="Self.FK_MovieGenre_Movie">
       <End Role="Movie" EntitySet="Movie" />
-      <End Role="MovieGenre" EntitySet="MovieGenre" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

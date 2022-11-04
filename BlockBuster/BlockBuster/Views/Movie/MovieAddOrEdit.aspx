@@ -20,7 +20,7 @@
     <br />
 
     <label>Year</label>
-    <asp:DropDownList ID="YearsList" runat="server"></asp:DropDownList>
+    <asp:DropDownList ID="GenresList" runat="server"></asp:DropDownList>
 
     <br />
 

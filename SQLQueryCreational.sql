@@ -18,6 +18,7 @@ CREATE TABLE [dbo].[Movie](
 	[TrailerLink] [varchar](200) NULL,
 	[Active] [bit] NOT NULL,
 	[Image] [varchar](200) NULL,
+	[GenreID] [int] NULL,
  CONSTRAINT [PK_Movie] PRIMARY KEY CLUSTERED 
 (
 	[MovieID] ASC
@@ -36,21 +37,7 @@ CREATE TABLE [dbo].[Genre](
 
 GO
 
-GO
-CREATE TABLE [dbo].[MovieGenre](
-	[MovieGenreId] [int] IDENTITY(1,1) NOT NULL,
-	[GenreID] [int] NULL,
-	[MovieID] [int] NULL,
- CONSTRAINT [MovieGenreId] PRIMARY KEY CLUSTERED 
-(
-	[MovieGenreId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[MovieGenre]  WITH CHECK ADD  CONSTRAINT [FK_MovieGenre_Movie] FOREIGN KEY([MovieID])
-REFERENCES [dbo].[Movie] ([MovieID])
-GO
-ALTER TABLE [dbo].[MovieGenre]  WITH CHECK ADD  CONSTRAINT [FK_MovieGenre_Genre] FOREIGN KEY([GenreID])
+ALTER TABLE [dbo].[Movie]  WITH CHECK ADD  CONSTRAINT [FK_MovieGenre] FOREIGN KEY([GenreID])
 REFERENCES [dbo].[Genre] ([GenreID])
+
+GO

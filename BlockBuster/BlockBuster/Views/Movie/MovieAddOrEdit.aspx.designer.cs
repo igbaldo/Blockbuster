@@ -51,13 +51,13 @@ namespace BlockBuster
         protected global::System.Web.UI.WebControls.TextBox DurationTxt;
 
         /// <summary>
-        /// YearsList control.
+        /// GenresList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList YearsList;
+        protected global::System.Web.UI.WebControls.DropDownList GenresList;
 
         /// <summary>
         /// RateTxt control.
