@@ -8314,7 +8314,7 @@ footer.full-width-ft .ft-copyright {
                                 </div>
                                 <div class="title-in">
                                     <div class="cate">
-                                        <span class="blue"><a href="#">Sci-fi</a></span>
+                                        <span class="blue"><a href="#"><%#: Item.Genre.GenreName %></a></span>
                                     </div>
                                     <h6><a href="/MovieList.aspx?id=<%#: Item.MovieID %>"><%#: Item.Title %></a></h6>
                                     <p><i class="fa fa-star" aria-hidden="true"></i><span><%#: Item.Rate %></span> /10</p>
