@@ -9926,7 +9926,6 @@ Initial Setup
                     <h5 class="modal-title" id="exampleModalLongTitle">Crear película</h5>
                 </div>
                 <div class="modal-body">
-                   <%-- <form>--%>
                         <asp:HiddenField ID="Id" runat="server" />
                         <div class="form-group col-md-12">
                             <label for="TextBoxPelicula">Nombre película</label>
@@ -9971,11 +9970,10 @@ Initial Setup
                             <label for="exampleFormControlSelect1">Género</label>
                             <asp:DropDownList class="form-control" ID="GenresList" runat="server"></asp:DropDownList>
                         </div>
-                    <%--</form>--%>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <asp:Button ID="ButtonSave" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" />
+                    <asp:Button ID="SaveButton" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" />
                 </div>
             </div>
         </div>

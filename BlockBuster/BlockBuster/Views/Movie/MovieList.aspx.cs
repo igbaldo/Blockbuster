@@ -49,6 +49,7 @@ namespace BlockBuster
             MovieService movieService = new MovieService();
             return movieService.GetAll();
         }
+
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             Movie movie = new Movie();
