@@ -9928,53 +9928,60 @@ Initial Setup
                 <div class="modal-body">
                     <form>
                         <div class="form-group col-md-12">
-                            <label for="exampleFormControlInput1">Nombre película</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                            <label for="TextBoxPelicula">Nombre película</label>
+                            <asp:TextBox class="form-control" ID="TextBoxPelicula" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Ingrese el nombre de la pelicula" ControlToValidate="TextBoxPelicula"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="exampleFormControlTextarea1">Descripción</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                             <label for="TextBoxDescripcion">Descripcion</label>
+                            <asp:TextBox class="form-control" rows="3" ID="TextBoxDescripcion" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" ErrorMessage="Ingrese una descripcion" ControlToValidate="TextBoxDescripcion"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="exampleFormControlInput1">Duración en minutos</label>
-                            <input type="text" class="form-control" id="duracion" placeholder="Duración">
+                            <label for="TextBoxDuracion">Duración en minutos</label>
+                            <asp:TextBox class="form-control" ID="TextBoxDuracion" runat="server"></asp:TextBox>
+                            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="La duracion debe ser un valor entre 1 y 1000" ControlToValidate="TextBoxDuracion" MinimumValue="1" MaximumValue="1000" ForeColor="Red"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Año lanzamiento</label>
-                            <input type="text" class="form-control" id="anio" placeholder="Año lanzamiento">
+                            <asp:TextBox class="form-control" ID="TextBoxAnio" runat="server"></asp:TextBox>
+                            <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="El año de lanzamiento debe ser entre 1900 y 2022"  ControlToValidate="TextBoxAnio" MinimumValue="1950" MaximumValue="2022" ForeColor="Red"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="formControlRange">Puntuación</label>
-                            <input type="range" class="form-control-range" id="formControlRange"  min="0"  max="10"  value="5" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())">
+                           <%-- <input type="range" class="form-control-range" id="formControlRange"  min="0"  max="10"  value="5" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())">
+                            <i class="fa fa-star" aria-hidden="true"></i><span id="rangeval">  5</span>--%>
+                            <asp:TextBox  class="form-control-range" ID="TextBoxPuntuacion" runat="server" min="0"  max="10"  value="5" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())"></asp:TextBox>
                             <i class="fa fa-star" aria-hidden="true"></i><span id="rangeval">  5</span>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Director película</label>
-                            <input type="text" class="form-control" id="director" placeholder="Director">
+                            <asp:TextBox class="form-control" ID="TextBoxDirector" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Reparto película</label>
-                            <input type="text" class="form-control" id="reparto" placeholder="reparto">
+                            <asp:TextBox class="form-control" ID="TextBoxReparto" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">URL Imagen portada</label>
-                            <input type="text" class="form-control" id="img" placeholder="URL">
+                            <asp:TextBox class="form-control" ID="TextBoxImg" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlSelect1">Género</label>
-                            <select class="form-control" id="exampleFormControlSelect1"> <!-- Cargar géneros -->
+<%--                            <select class="form-control" id="exampleFormControlSelect1"> <!-- Cargar géneros -->
                                 <option selected disabled>Seleccione un género</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
-                            </select>
+                            </select>--%>
+                            <asp:ListBox ID="ListBoxGenero"  runat="server"></asp:ListBox>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <asp:Button ID="ButtonSave" class="btn btn-primary" runat="server" Text="Guardar" />
                 </div>
             </div>
         </div>
