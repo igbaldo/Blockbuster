@@ -24,6 +24,15 @@ namespace BlockBuster
         protected global::System.Web.UI.WebControls.ListView ListView1;
 
         /// <summary>
+        /// Id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Id;
+
+        /// <summary>
         /// TextBoxPelicula control.
         /// </summary>
         /// <remarks>
@@ -132,13 +141,13 @@ namespace BlockBuster
         protected global::System.Web.UI.WebControls.TextBox TextBoxImg;
 
         /// <summary>
-        /// ListBoxGenero control.
+        /// GenresList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxGenero;
+        protected global::System.Web.UI.WebControls.DropDownList GenresList;
 
         /// <summary>
         /// ButtonSave control.
