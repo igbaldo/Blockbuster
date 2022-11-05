@@ -35,11 +35,9 @@ namespace BlockBuster
             if (!Page.IsPostBack)
             {
                 CmbLoad();
-                var sdfsd = Request.QueryString["movieId"];
-
-                if (Request.QueryString["movieId"] != null && Request.QueryString["movieId"] != "0")
+                if (Request.QueryString["Id"] != null && Request.QueryString["Id"] != "0")
                 {
-                    LoadMovie(Convert.ToInt32(Request.QueryString["movieId"]));
+                    LoadMovie(Convert.ToInt32(Request.QueryString["Id"]));
                 }
             }
         }
@@ -103,6 +101,7 @@ namespace BlockBuster
             TextBoxReparto.Text = movie.Cast;
             TextBoxImg.Text = movie.TrailerLink;
             TextBoxImg.Text = movie.Image;
+            GenresList.SelectedValue = movie.GenreID.ToString();
         }
 
     }

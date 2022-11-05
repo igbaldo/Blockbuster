@@ -9874,11 +9874,11 @@ Initial Setup
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                             <a href="/MovieAddOrEdit.aspx?movieId=0" >
                                 Cargar película
-                            </button>
+                            </a>
 
-                            <!--<a href="MovieAddOrEdit.aspx?movieID=0">Add Movie</a>-->
+                            <%--<a href="MovieAddOrEdit.aspx?movieID=0">Add Movie</a>--%>
 
                             <div class="topbar-filter fw">
                                 <p>Se encontraron <span>1,608 películas</span> en total</p> <!-- TRAER COUNT PELICULAS -->
@@ -9895,7 +9895,7 @@ Initial Setup
                                         <div class="movie-item-style-2 movie-item-style-1">
                                             <img src="<%#: Item.Image %>" alt="">
                                             <div class="hvr-inner">
-                                                <a href="moviesingle.html"> EDIT <i class="ion-android-arrow-dropright"></i></a>
+                                                <a href="/MovieAddOrEdit.aspx?movieId=<%#: Item.MovieID %>" >Edit</a>
                                             </div>
                                             <div class="mv-item-infor">
                                                 <h6><a href="#"><%#: Item.Title %></a></h6>
@@ -9927,6 +9927,7 @@ Initial Setup
                 </div>
                 <div class="modal-body">
                         <asp:HiddenField ID="Id" runat="server" />
+
                         <div class="form-group col-md-12">
                             <label for="TextBoxPelicula">Nombre película</label>
                             <asp:TextBox class="form-control" ID="TextBoxPelicula" runat="server"></asp:TextBox>

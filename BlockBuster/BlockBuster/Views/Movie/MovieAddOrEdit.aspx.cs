@@ -33,10 +33,7 @@ namespace BlockBuster
         {
             if (!Page.IsPostBack)
             {
-                //SetMaxLengthFields();
                 CmbLoad();
-                var sdfsd = Request.QueryString["movieId"];
-
                 if (Request.QueryString["movieId"] != null && Request.QueryString["movieId"] != "0")
                 {
                     LoadMovie(Convert.ToInt32(Request.QueryString["movieId"]));
@@ -51,14 +48,13 @@ namespace BlockBuster
             if (Id.Value != "")
                 movie.MovieID = Convert.ToInt32(Id.Value);
 
-            movie.Title = TitleTxt.Text;
-            movie.Description = DescriptionTxt.Text;
-            movie.Duration = DurationTxt.Text;
-            movie.Rate = Convert.ToInt16(RateTxt.Text);
-            movie.Director = DirectorTxt.Text;
-            movie.Cast = CastTxt.Text;
-            movie.TrailerLink = TrailerLinkTxt.Text;
-            movie.Image = ImageUrl.Text;
+            movie.Title = TextBoxPelicula.Text;
+            movie.Description = TextBoxDescripcion.Text;
+            movie.Duration = TextBoxDuracion.Text;
+            movie.Rate = Convert.ToInt16(TextBoxPuntuacion.Text);
+            movie.Director = TextBoxDirector.Text;
+            movie.Cast = TextBoxReparto.Text;
+            movie.Image = TextBoxImg.Text;
             movie.Active = true;
 
             _movieService.Save(movie);
@@ -83,14 +79,14 @@ namespace BlockBuster
         private void BindFields(Movie movie)
         {
             Id.Value = movie.MovieID.ToString();
-            TitleTxt.Text = movie.Title;
-            DescriptionTxt.Text = movie.Description;
-            DurationTxt.Text = movie.Duration?.ToString();
-            RateTxt.Text = movie.Rate.ToString();
-            DirectorTxt.Text = movie.Director;
-            CastTxt.Text = movie.Cast;
-            TrailerLinkTxt.Text = movie.TrailerLink;
-            ImageUrl.Text = movie.Image;
+            TextBoxPelicula.Text = movie.Title;
+            TextBoxDescripcion.Text = movie.Description;
+            TextBoxDuracion.Text = movie.Duration?.ToString();
+            TextBoxPuntuacion.Text = movie.Rate.ToString();
+            TextBoxDirector.Text = movie.Director;
+            TextBoxReparto.Text = movie.Cast;
+            TextBoxImg.Text = movie.Image;
+            GenresList.SelectedIndex = movie.GenreID != null ? (int)movie.GenreID : 0;   
         }
 
         private void CmbLoad()
