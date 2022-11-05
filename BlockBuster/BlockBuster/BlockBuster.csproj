@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Blockbuster_logo.png" />
+    <Content Include="Images\slider-bg.jpg" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -126,7 +128,6 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\blockbuster.svg" />
-    <Content Include="Images\Blockbuster_logo.png" />
     <Content Include="Views\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -146,6 +147,7 @@
     <Content Include="ModelBlockBuster.edmx.diagram">
       <DependentUpon>ModelBlockBuster.edmx</DependentUpon>
     </Content>
+    <None Include="Content\.editorconfig" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="ModelBlockBuster.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

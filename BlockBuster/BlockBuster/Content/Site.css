@@ -170,11 +170,17 @@ figure.snip0051:after {
     overflow: hidden;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 25px !important;
+}
 
-
-
-
-
+body{
+    background-image: url(/Images/slider-bg.jpg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px !important;
+ }
 
 
 
@@ -186,7 +192,6 @@ width of un-hovered image = 40px - you can set this to anything
 so total container width = 640 + 40*4 = 800px;
 default width = 800/5 = 160px;
 */
-
 .accordion {
     width: 800px;
     height: 320px;
@@ -256,4 +261,5 @@ default width = 800/5 = 160px;
         background: pink;
     }
 }
+
 

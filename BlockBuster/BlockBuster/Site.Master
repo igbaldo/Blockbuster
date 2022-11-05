@@ -42,28 +42,27 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container" style="display: flex; align-items: center;">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">BlockBuster</a>
+                    <a class="navbar-brand" runat="server" href="~/" style="height: auto !important;"><asp:Image  ID="Image2" runat="server" ImageUrl="~/Images/Blockbuster_logo.png" BorderStyle="None" /></a>
+
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/MovieList">Movies</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/">Inicio</a></li>
+                        <li><a runat="server" href="~/MovieList">Películas</a></li>
+                        <li><a runat="server" href="~/About">Sobre Nosotros</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div id="TitleContent" style="text-align: center">
-            <a runat="server" href="~/">
-                <asp:Image  ID="Image1" runat="server" ImageUrl="~/Images/Blockbuster_logo.png" BorderStyle="None" Width="400px" Height="200px" />
-            </a>  
+            
             <br />  
         </div>
         <div class="container body-content">
@@ -71,7 +70,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - BlockBuster</p>
+                <p>&copy; <%: DateTime.Now.Year %> - BlockBuster - Baldo, Casado, Cascallares, Lucero, Minetti y Núñez</p>
             </footer>
         </div>
 
