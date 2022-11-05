@@ -19,11 +19,11 @@ namespace BlockBuster.Repositories
             }
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             using (var context = new BlockBusterContext())
             {
-                return context.Set<TEntity>().Include("Genre").ToList();
+                return context.Set<TEntity>().ToList();
             }
         }
 

@@ -10,11 +10,11 @@ namespace BlockBuster.Services
 {
     public class MovieService : IGenericServices<Movie>
     {
-        private GenericRepository<Movie> _movieRepository;
+        private MovieRepository _movieRepository;
 
         public MovieService()
         {
-            this._movieRepository = new GenericRepository<Movie>();
+            this._movieRepository = new MovieRepository();
         }
 
         public void Add(Movie entity)
@@ -53,5 +53,9 @@ namespace BlockBuster.Services
                 _movieRepository.Add(entity);
         }
 
+        internal IEnumerable<Movie> GetByFilters(string searchPatter, int searchGenre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
