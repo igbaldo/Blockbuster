@@ -9877,11 +9877,14 @@ Initial Setup
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                 Cargar película
                             </button>
+                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                Editar película
+                            </button>
 
                             <!--<a href="MovieAddOrEdit.aspx?movieID=0">Add Movie</a>-->
 
                             <div class="topbar-filter fw">
-                                <p>Se encontraron <span>1,608 películas</span> en total</p> <!-- TRAER COUNT PELICULAS -->
+                                <p>Se encontraron <span><%= CountMovie %></span> en total</p>
                             </div>
                             <div class="flex-wrap-movielist mv-grid-fw">
 
@@ -9947,28 +9950,35 @@ Initial Setup
                             <asp:TextBox class="form-control" ID="TextBoxAnio" runat="server"></asp:TextBox>
                             <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="El año de lanzamiento debe ser entre 1900 y 2022"  ControlToValidate="TextBoxAnio" MinimumValue="1950" MaximumValue="2022" Type="Integer" ForeColor="Red"></asp:RangeValidator>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="formControlRange">Puntuación</label>
-                           <%-- <input type="range" class="form-control-range" id="formControlRange"  min="0"  max="10"  value="5" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())">
-                            <i class="fa fa-star" aria-hidden="true"></i><span id="rangeval">  5</span>--%>
-                            <asp:TextBox  class="form-control-range" ID="TextBoxPuntuacion" runat="server" min="0"  max="10"  value="5" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())"></asp:TextBox>
-                            <i class="fa fa-star" aria-hidden="true"></i><span id="rangeval">  5</span>
+                            <i class="fa fa-star" aria-hidden="true"></i><asp:TextBox  class="form-control-range" ID="TextBoxPuntuacion" runat="server"></asp:TextBox>
+                            <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="La puntuacion debe ser un valor entre 0 y 10" MinimumValue="0" MaximumValue="10" Type="Double" ForeColor="Red" ControlToValidate="TextBoxPuntuacion"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Director película</label>
                             <asp:TextBox class="form-control" ID="TextBoxDirector" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Se debe ingresar un director" ForeColor="Red" ControlToValidate="TextBoxDirector"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Reparto película</label>
                             <asp:TextBox class="form-control" ID="TextBoxReparto" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese al menos 1 miembro de reparto" ForeColor="Red" ControlToValidate="TextBoxReparto"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">URL Imagen portada</label>
                             <asp:TextBox class="form-control" ID="TextBoxImg" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese una URL de portada" ForeColor="Red" ControlToValidate="TextBoxImg"></asp:RequiredFieldValidator>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlInput1">URL Trailer</label>
+                            <asp:TextBox class="form-control" ID="TextBoxTrailer" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Ingrese una URL de un trailer" ForeColor="Red" ControlToValidate="TextBoxTrailer"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlSelect1">Género</label>
                             <asp:DropDownList class="form-control" ID="GenresList" runat="server"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Seleccione un Genero" ControlToValidate="GenresList" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -9978,21 +9988,4 @@ Initial Setup
             </div>
         </div>
     </div>
-
-    <script>
-        $('#formControlRange').mdbRange({
-            value: {
-                min: 0,
-                max: 10
-            },
-            single: {
-                active: true,
-                multi: {
-                    active: true,
-                    rangeLength: 1
-                },
-            }
-        });
-    </script>
-
 </asp:Content>

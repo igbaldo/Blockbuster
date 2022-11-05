@@ -17,6 +17,7 @@ namespace BlockBuster
 
         private readonly MovieService _movieService;
         private readonly GenreService _genreService;
+        protected int CountMovie { get; set; }
 
         #endregion
 
@@ -32,6 +33,7 @@ namespace BlockBuster
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CountMovie = _movieService.GetAll().Count();
             if (!Page.IsPostBack)
             {
                 CmbLoad();
