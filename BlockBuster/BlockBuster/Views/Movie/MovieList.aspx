@@ -9941,12 +9941,12 @@ Initial Setup
                         <div class="form-group col-md-6">
                             <label for="TextBoxDuracion">Duración en minutos</label>
                             <asp:TextBox class="form-control" ID="TextBoxDuracion" runat="server"></asp:TextBox>
-                            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="La duracion debe ser un valor entre 1 y 1000" ControlToValidate="TextBoxDuracion" MinimumValue="1" MaximumValue="1000" ForeColor="Red"></asp:RangeValidator>
+                            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="La duracion debe ser un valor entre 1 y 1000" ControlToValidate="TextBoxDuracion" MinimumValue="1" MaximumValue="1000" Type="Integer" ForeColor="Red"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlInput1">Año lanzamiento</label>
                             <asp:TextBox class="form-control" ID="TextBoxAnio" runat="server"></asp:TextBox>
-                            <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="El año de lanzamiento debe ser entre 1900 y 2022"  ControlToValidate="TextBoxAnio" MinimumValue="1950" MaximumValue="2022" ForeColor="Red"></asp:RangeValidator>
+                            <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="El año de lanzamiento debe ser entre 1900 y 2022"  ControlToValidate="TextBoxAnio" MinimumValue="1950" MaximumValue="2022" Type="Integer" ForeColor="Red"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="formControlRange">Puntuación</label>
@@ -9969,13 +9969,6 @@ Initial Setup
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleFormControlSelect1">Género</label>
-<%--                            <select class="form-control" id="exampleFormControlSelect1"> <!-- Cargar géneros -->
-                                <option selected disabled>Seleccione un género</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>--%>
                             <asp:DropDownList class="form-control" ID="GenresList" runat="server"></asp:DropDownList>
                         </div>
                     </form>

@@ -20,7 +20,6 @@ namespace BlockBuster
 
         #endregion
 
-
         #region Constructor
 
         public MovieList()
@@ -30,11 +29,11 @@ namespace BlockBuster
         }
 
         #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                //SetMaxLengthFields();
                 CmbLoad();
                 var sdfsd = Request.QueryString["movieId"];
 
@@ -65,8 +64,7 @@ namespace BlockBuster
             movie.Cast = TextBoxReparto.Text;
             movie.TrailerLink = TextBoxImg.Text;
             movie.Image = TextBoxImg.Text;
-            movie.GenreID = 1;
-            //GenresList.Text;
+            movie.GenreID = Convert.ToInt16(GenresList.SelectedValue);
             movie.Active = true;
 
             _movieService.Save(movie);
