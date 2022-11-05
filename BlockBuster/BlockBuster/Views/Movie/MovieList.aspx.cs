@@ -69,6 +69,7 @@ namespace BlockBuster
             movie.Active = true;
 
             _movieService.Save(movie);
+            Page_Load(sender, e);
         }
 
         private void CmbLoad()
@@ -106,5 +107,11 @@ namespace BlockBuster
             GenresList.SelectedValue = movie.GenreID.ToString();
         }
 
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            _movieService.Delete(Convert.ToInt32(Id.Value));
+            Page_Load(sender, e);
+        }
     }
 }

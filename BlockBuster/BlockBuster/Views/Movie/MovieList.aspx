@@ -9869,19 +9869,13 @@ Initial Setup
                 <h2><%: Page.Title %></h2>
             </hgroup>
 
-
             <div class="page-single">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                             <a href="/MovieAddOrEdit.aspx?movieId=0" >
-                                Cargar película
-                            </button>
-                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                Editar película
-                            </button>
 
-                            <%--<a href="MovieAddOrEdit.aspx?movieID=0">Add Movie</a>--%>
+                            <a href="/MovieList?Id=0"  class="btn btn-primary">Cargar Película</a>
+
 
                             <div class="topbar-filter fw">
                                 <p>Se encontraron <span><%= CountMovie %></span> en total</p>
@@ -9891,18 +9885,19 @@ Initial Setup
                                 <asp:ListView ID="ListView1"
                                     ItemType="BlockBuster.Movie"
                                     runat="server"
-                                    SelectMethod="GetMovies">
+                                    SelectMethod="GetMovies" DeleteMethod="DeleteMovie">
 
                                     <ItemTemplate>
 
                                         <div class="movie-item-style-2 movie-item-style-1">
                                             <img src="<%#: Item.Image %>" alt="">
                                             <div class="hvr-inner">
-                                                <a href="/MovieAddOrEdit.aspx?movieId=<%#: Item.MovieID %>" >Edit</a>
+                                                <a href="/MovieList?Id=<%#: Item.MovieID %>" >Edit</a>
                                             </div>
                                             <div class="mv-item-infor">
                                                 <h6><a href="#"><%#: Item.Title %></a></h6>
                                                 <p class="rate"><i class="ion-android-star"></i><span><%#: Item.Rate %></span> /10</p>
+
                                             </div>
                                         </div>
 
@@ -9983,10 +9978,22 @@ Initial Setup
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <asp:Button ID="SaveButton" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" />
+                    <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
+                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="Delete_Click" CausesValidation="False" PostBackUrl="/MovieList"/>
+                    <asp:Button ID="SaveButton" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" PostBackUrl="/MovieList"/>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        var params = new window.URLSearchParams(window.location.search);
+
+        if (params.get('Id') > 0) {
+            $('#exampleModalCenter').modal('toggle');
+            $('#exampleModalLongTitle').text('Editar Película');
+        } else if (params.get('Id') == 0){
+            $('#exampleModalCenter').modal('toggle');
+        }
+    </script>
 </asp:Content>

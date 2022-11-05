@@ -32,7 +32,7 @@ namespace BlockBuster.Services
 
         public IEnumerable<Movie> GetAll()
         {
-            return _movieRepository.GetAll();
+            return _movieRepository.GetAll().Where(x => x.Active);
         }
 
         public Movie GetById(int entiyId)
