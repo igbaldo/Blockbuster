@@ -55,7 +55,7 @@ namespace BlockBuster.Services
 
         internal IEnumerable<Movie> GetByFilters(string searchPatter, int searchGenre)
         {
-            throw new NotImplementedException();
+            return _movieRepository.GetByFilters(searchPatter, searchGenre);
         }
     }
 }
