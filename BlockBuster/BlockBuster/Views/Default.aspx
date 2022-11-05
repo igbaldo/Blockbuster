@@ -9844,13 +9844,13 @@ Initial Setup
             margin-right: 0;
         }
 
-        .titulo-recomendaciones{
+        .titulo-recomendaciones {
             font-size: 45px;
             color: white;
             margin: -30px 0 50px 0;
         }
 
-        input, select{
+        input, select {
             max-width: 1500px !important;
             height: 45px !important;
         }
@@ -9859,21 +9859,19 @@ Initial Setup
     <section style="margin-top: 120px;">
         <div class="container">
             <div class="row">
-                <form action="/" method="post"></form>
-                    <div class="form-group col-md-7">
-                        <input type="text" class="form-control col-12" id="pelicula" placeholder="Nombre película">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <select id="inputState" class="form-control">
-                            <option selected disabled>Género</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2 mx-0 px-0">
-                        <button type="submit" class="btn btn-primary">Buscar
-                        </button>
-                    </div>
-                </form>
+                <%--<form action="/" method="post"></form>--%>
+                <div class="form-group col-md-7">
+                    <input type="text" class="form-control col-12" id="searchString" placeholder="Nombre película" runat="server">
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:DropDownList ID="GenresList" runat="server"></asp:DropDownList>
+                </div>
+<%--                <div class="form-group col-md-2 mx-0 px-0">
+                    <asp:Button ID="SearchButton" runat="server" type="submit" class="btn btn-primary" Text="Search" OnClick="SearchButton_Click" />
+                </div>--%>
+                <div class="form-group col-md-2 mx-0 px-0">
+                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Search" OnClick="SearchButton_Click" />
+                </div>
             </div>
         </div>
     </section>
