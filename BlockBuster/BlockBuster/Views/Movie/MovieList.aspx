@@ -9957,8 +9957,8 @@ Initial Setup
                             <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="El año de lanzamiento debe ser entre 1900 y 2022"  ControlToValidate="TextBoxAnio" MinimumValue="1950" MaximumValue="2022" Type="Integer" ForeColor="Red"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="formControlRange">Puntuación</label>
-                            <i class="fa fa-star" aria-hidden="true"></i><asp:TextBox  class="form-control-range" ID="TextBoxPuntuacion" runat="server"></asp:TextBox>
+                            <label for="formControlRange">Puntuación</label><span id="rangeval">  </span>
+                            <i class="fa fa-star" aria-hidden="true"></i><asp:TextBox type="range" min="0"  max="10" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())" class="form-control-range" ID="TextBoxPuntuacion" runat="server"></asp:TextBox>
                             <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="La puntuacion debe ser un valor entre 0 y 10" MinimumValue="0" MaximumValue="10" Type="Double" ForeColor="Red" ControlToValidate="TextBoxPuntuacion"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
@@ -9989,7 +9989,7 @@ Initial Setup
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
-                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="Delete_Click" CausesValidation="False" EnableViewState="false" PostBackUrl="/MovieList" />
+                    <asp:Button ID="Button1" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="Delete_Click" CausesValidation="False" EnableViewState="false" PostBackUrl="/MovieList" />
                     <asp:Button ID="SaveButton" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" PostBackUrl="/MovieList"/>
                 </div>
             </div>
