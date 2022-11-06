@@ -46,8 +46,7 @@ namespace BlockBuster
 
         public IEnumerable<Movie> GetMovies()
         {
-            MovieService movieService = new MovieService();
-            return movieService.GetAllActives();
+            return _movieService.GetAllActives();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -63,7 +62,7 @@ namespace BlockBuster
             movie.Rate = Convert.ToInt16(TextBoxPuntuacion.Text);
             movie.Director = TextBoxDirector.Text;
             movie.Cast = TextBoxReparto.Text;
-            movie.TrailerLink = TextBoxImg.Text;
+            movie.TrailerLink = TextBoxTrailer.Text;
             movie.Image = TextBoxImg.Text;
             movie.GenreID = Convert.ToInt16(GenresList.SelectedValue);
             movie.Active = true;
@@ -102,7 +101,7 @@ namespace BlockBuster
             TextBoxPuntuacion.Text = movie.Rate.ToString();
             TextBoxDirector.Text = movie.Director;
             TextBoxReparto.Text = movie.Cast;
-            TextBoxImg.Text = movie.TrailerLink;
+            TextBoxTrailer.Text = movie.TrailerLink;
             TextBoxImg.Text = movie.Image;
             GenresList.SelectedValue = movie.GenreID.ToString();
         }
