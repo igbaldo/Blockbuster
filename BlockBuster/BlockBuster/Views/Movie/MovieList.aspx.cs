@@ -64,6 +64,7 @@ namespace BlockBuster
             movie.Cast = TextBoxReparto.Text;
             movie.TrailerLink = TextBoxTrailer.Text;
             movie.Image = TextBoxImg.Text;
+            movie.Year = Convert.ToInt16(TextBoxAnio.Text);
             movie.GenreID = Convert.ToInt16(GenresList.SelectedValue);
             movie.Active = true;
 
@@ -103,6 +104,7 @@ namespace BlockBuster
             TextBoxReparto.Text = movie.Cast;
             TextBoxTrailer.Text = movie.TrailerLink;
             TextBoxImg.Text = movie.Image;
+            TextBoxAnio.Text = movie.Year.ToString();
             GenresList.SelectedValue = movie.GenreID.ToString();
         }
 
