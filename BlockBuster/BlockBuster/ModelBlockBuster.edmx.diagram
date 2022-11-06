@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="345014a078ab4dd08e999cf44e2daa03" Name="Diagram1">
         <EntityTypeShape EntityType="BlockBusterModel.Genre" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BlockBusterModel.Movie" Width="1.5" PointX="4.75" PointY="1.125" />
+        <EntityTypeShape EntityType="BlockBusterModel.Movie" Width="1.5" PointX="3" PointY="6.25" />
         <AssociationConnector Association="BlockBusterModel.FK_MovieGenre" />
         </Diagram>
     </edmx:Diagrams>

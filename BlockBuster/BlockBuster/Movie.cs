@@ -17,7 +17,7 @@ namespace BlockBuster
         public int MovieID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string Duration { get; set; }
+        public Nullable<int> Duration { get; set; }
         public int Year { get; set; }
         public Nullable<int> Rate { get; set; }
         public string Director { get; set; }

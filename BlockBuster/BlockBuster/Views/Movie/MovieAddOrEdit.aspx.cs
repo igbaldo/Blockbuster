@@ -50,7 +50,7 @@ namespace BlockBuster
 
             movie.Title = TextBoxPelicula.Text;
             movie.Description = TextBoxDescripcion.Text;
-            movie.Duration = TextBoxDuracion.Text;
+            movie.Duration = Convert.ToInt16(TextBoxDuracion.Text);
             movie.Rate = Convert.ToInt16(TextBoxPuntuacion.Text);
             movie.Director = TextBoxDirector.Text;
             movie.Cast = TextBoxReparto.Text;
