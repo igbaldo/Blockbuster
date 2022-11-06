@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[Movie](
 	[MovieID] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](100) NOT NULL,
 	[Description] [varchar](max) NULL,
-	[Duration] [varchar](3) NULL,
+	[Duration] [int] NULL,
 	[Year] [int] NOT NULL,
 	[Rate] [int] NULL,
 	[Director] [varchar](100) NULL,
