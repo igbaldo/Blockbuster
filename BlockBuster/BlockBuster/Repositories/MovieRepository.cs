@@ -27,11 +27,11 @@ namespace BlockBuster.Repositories
 
                 if (searchGenre != 0 && !String.IsNullOrEmpty(searchPatter))
                 {
-                    result = context.Movies.Where(x => x.GenreID == searchGenre && x.Title.ToUpper().Contains(searchPatter.ToUpper())).Include("Genre").ToList();
+                    result = context.Movies.Where(x => x.Active && x.GenreID == searchGenre && x.Title.ToUpper().Contains(searchPatter.ToUpper())).Include("Genre").ToList();
                 }
                 else
                 {
-                    result = context.Movies.Where(x => (searchGenre != 0 && x.GenreID == searchGenre) || !String.IsNullOrEmpty(searchPatter) && x.Title.ToUpper().Contains(searchPatter.ToUpper())).Include("Genre").ToList();
+                    result = context.Movies.Where(x => x.Active && ((searchGenre != 0 && x.GenreID == searchGenre) || !String.IsNullOrEmpty(searchPatter) && x.Title.ToUpper().Contains(searchPatter.ToUpper()))).Include("Genre").ToList();
                 }
 
                 return result;

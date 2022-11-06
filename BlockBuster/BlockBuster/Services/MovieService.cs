@@ -32,7 +32,7 @@ namespace BlockBuster.Services
 
         public IEnumerable<Movie> GetAll()
         {
-            return _movieRepository.GetAll().Where(x => x.Active);
+            return _movieRepository.GetAll();
         }
 
         public Movie GetById(int entiyId)
@@ -56,6 +56,11 @@ namespace BlockBuster.Services
         internal IEnumerable<Movie> GetByFilters(string searchPatter, int searchGenre)
         {
             return _movieRepository.GetByFilters(searchPatter, searchGenre);
+        }
+
+        internal IEnumerable<Movie> GetAllActives()
+        {
+            return _movieRepository.GetAll().Where(x => x.Active);
         }
     }
 }

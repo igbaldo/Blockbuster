@@ -33,7 +33,7 @@ namespace BlockBuster
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CountMovie = _movieService.GetAll().Count();
+            CountMovie = _movieService.GetAllActives().Count();
             if (!Page.IsPostBack)
             {
                 CmbLoad();
@@ -47,7 +47,7 @@ namespace BlockBuster
         public IEnumerable<Movie> GetMovies()
         {
             MovieService movieService = new MovieService();
-            return movieService.GetAll();
+            return movieService.GetAllActives();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace BlockBuster
             movie.Active = true;
 
             _movieService.Save(movie);
-            Page_Load(sender, e);
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         private void CmbLoad()
@@ -111,7 +111,7 @@ namespace BlockBuster
         protected void Delete_Click(object sender, EventArgs e)
         {
             _movieService.Delete(Convert.ToInt32(Id.Value));
-            Page_Load(sender, e);
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
     }
 }

@@ -9979,7 +9979,7 @@ Initial Setup
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
-                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="Delete_Click" CausesValidation="False" PostBackUrl="/MovieList"/>
+                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="Delete_Click" CausesValidation="False" EnableViewState="false" PostBackUrl="/MovieList" />
                     <asp:Button ID="SaveButton" class="btn btn-primary" runat="server" OnClick="SaveButton_Click" Text="Guardar" PostBackUrl="/MovieList"/>
                 </div>
             </div>

@@ -9880,7 +9880,6 @@ Initial Setup
         <div class="container">
             <div class="row">
 
-                <h2 class="titulo-recomendaciones">Resultados: </h2>
                 <div class="slick-multiItemSlider">
 
                     <asp:ListView ID="ListView2"

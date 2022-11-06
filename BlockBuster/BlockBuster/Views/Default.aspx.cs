@@ -34,7 +34,7 @@ namespace BlockBuster
 
         public IEnumerable<Movie> GetMovies()
         {
-            return _movieService.GetAll().OrderBy(arg => Guid.NewGuid()).Take(4);
+            return _movieService.GetAllActives().OrderBy(arg => Guid.NewGuid()).Take(4);
         }
 
         private void CmbLoad()
