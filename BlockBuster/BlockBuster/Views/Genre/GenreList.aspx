@@ -25,9 +25,6 @@
         .table-striped > tbody > tr:nth-of-type(odd) .btn-edit-par {
             background-color: #020d18 !important;
         }
-        .btn-edit-par:nth-of-type(odd) { 
-            
-        }
     </style>
     <section>
         <div>

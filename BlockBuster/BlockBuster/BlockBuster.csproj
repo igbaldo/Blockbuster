@@ -115,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Blockbuster_logo.png" />
+    <Content Include="Images\perfil\cami.png" />
+    <Content Include="Images\perfil\gabi.jpg" />
+    <Content Include="Images\perfil\nacho.jpg" />
+    <Content Include="Images\perfil\nico.png" />
+    <Content Include="Images\perfil\sabri.jpeg" />
+    <Content Include="Images\perfil\tomi.jpg" />
     <Content Include="Images\slider-bg.jpg" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
