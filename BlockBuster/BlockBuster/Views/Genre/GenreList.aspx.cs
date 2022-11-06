@@ -33,6 +33,13 @@ namespace BlockBuster
         {
             GridViewGenre.DataSource = GetGenres();
             GridViewGenre.DataBind();
+            if (!Page.IsPostBack)
+            {
+                if (Request.QueryString["Id"] != null && Request.QueryString["Id"] != "0")
+                {
+                    LoadGenre(Convert.ToInt32(Request.QueryString["Id"]));
+                }
+            }
         }
 
         public IEnumerable<Genre> GetGenres()
@@ -51,6 +58,19 @@ namespace BlockBuster
 
             _genreService.Save(genre);
             Response.Redirect(Request.Url.AbsoluteUri);
+        }
+
+        private void LoadGenre(int genreId)
+        {
+            Genre genre = new Genre();
+            genre = _genreService.GetById(genreId);
+            BindFields(genre);
+        }
+
+        private void BindFields(Genre genre)
+        {
+            Id.Value = genre.GenreID.ToString();
+            TextBoxGenero.Text = genre.GenreName;
         }
     }
 }

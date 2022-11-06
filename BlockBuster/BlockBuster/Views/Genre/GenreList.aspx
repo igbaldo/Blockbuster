@@ -16,12 +16,16 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <a href="/GenreList?Id=0"  class="btn btn-primary">Cargar Género</a>
-
                             <div>
-                                <asp:GridView ID="GridViewGenre" runat="server" AutoGenerateColumns="false">
+                                <asp:GridView ID="GridViewGenre" runat="server" AutoGenerateColumns="false" ItemType="BlockBuster.Genre">
                                     <Columns>
                                         <asp:BoundField DataField="GenreId" HeaderText="Codigo" />
                                         <asp:BoundField DataField="GenreName" HeaderText="Nombre" />
+                                          <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
+                                            <ItemTemplate>
+                                                 <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary">Editar</a>
+                                             </ItemTemplate>                  
+                                            </asp:TemplateField>   
                                     </Columns>
                                 </asp:GridView>      
                             </div>
