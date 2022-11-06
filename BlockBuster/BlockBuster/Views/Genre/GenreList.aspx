@@ -1,5 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GenreList.aspx.cs" Inherits="BlockBuster.GenreList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <style>
+        table th{
+            color: #fff;
+            font-weight: 800;
+        }
+        table td{
+            color: #fff;
+            font-weight: 600;
+        }
+        table{
+            border: none !important;
+        }
+        table th:first-child{
+            width: 20%;
+        }
+        table th:nth-child(2){
+            width: 40%;
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: #3d577e !important;
+        }
+    </style>
     <section>
         <div>
             <hgroup>
@@ -15,12 +38,18 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-                            <a href="/GenreList?Id=0"  class="btn btn-primary">Cargar Género</a>
+                            <a href="/GenreList?Id=0"  class="btn btn-primary btn-new">Cargar Género</a>
+
+                            <div class="topbar-filter fw">
+                                <p>Se encontraron <span><!-- Numero genero --> géneros</span> en total</p>
+                            </div>
+
+
                             <div>
                                 <asp:GridView ID="GridViewGenre" runat="server" AutoGenerateColumns="false" ItemType="BlockBuster.Genre">
                                     <Columns>
-                                        <asp:BoundField DataField="GenreId" HeaderText="Codigo" />
-                                        <asp:BoundField DataField="GenreName" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="GenreId" HeaderText="Código" />
+                                        <asp:BoundField DataField="GenreName" HeaderText="Género" />
                                           <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
                                             <ItemTemplate>
                                                  <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary">Editar</a>
@@ -63,13 +92,15 @@
 
     </section>
         <script>
-        var params = new window.URLSearchParams(window.location.search);
+            var params = new window.URLSearchParams(window.location.search);
 
-        if (params.get('Id') > 0) {
-            $('#exampleModalCenter').modal('toggle');
-            $('#exampleModalLongTitle').text('Editar género');
-        } else if (params.get('Id') == 0){
-            $('#exampleModalCenter').modal('toggle');
-        }
+            if (params.get('Id') > 0) {
+                $('#exampleModalCenter').modal('toggle');
+                $('#exampleModalLongTitle').text('Editar género');
+            } else if (params.get('Id') == 0){
+                $('#exampleModalCenter').modal('toggle');
+            }
+
+            $("table").addClass("table table-striped");
         </script>
 </asp:Content>
