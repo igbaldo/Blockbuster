@@ -22,6 +22,12 @@
         .table-striped > tbody > tr:nth-of-type(odd) {
             background-color: #3d577e !important;
         }
+        .table-striped > tbody > tr:nth-of-type(odd) .btn-edit-par {
+            background-color: #020d18 !important;
+        }
+        .btn-edit-par:nth-of-type(odd) { 
+            
+        }
     </style>
     <section>
         <div>
@@ -52,7 +58,7 @@
                                         <asp:BoundField DataField="GenreName" HeaderText="Género" />
                                           <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
                                             <ItemTemplate>
-                                                 <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary">Editar</a>
+                                                 <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary btn-edit-par">Editar</a>
                                              </ItemTemplate>                  
                                             </asp:TemplateField>   
                                     </Columns>
