@@ -4934,7 +4934,7 @@ Initial Setup
             left: 0;
             bottom: 0;
             right: 0;
-            background-color: #dd003f;
+            background-color: #375a7f;
             padding: 8px 15px;
             width: 110px;
             height: 38px;
@@ -5161,12 +5161,11 @@ Initial Setup
 
             .movie-item-style-1 .hvr-inner {
                 position: absolute;
-                top: 0;
-                background-color: #dd003f;
+                top: 110px;
+                left: 45px;
+                background-color: #375a7f;
                 padding: 8px 15px;
                 text-align: center;
-                margin-left: 30px;
-                margin-top: 110px;
                 -webkit-border-radius: 30px;
                 -moz-border-radius: 30px;
                 border-radius: 30px;
@@ -6601,7 +6600,7 @@ Initial Setup
             }
 
             .blog-detail-ct .comment-form form input.submit {
-                background-color: #dd003f;
+                background-color: #375a7f;
                 padding: 0 45px;
                 height: 46px;
                 -webkit-border-radius: 30px;
@@ -6857,7 +6856,7 @@ Initial Setup
             color: #abb7c4;
             font-weight: bold;
             text-transform: uppercase;
-            background-color: #dd003f;
+            background-color: #375a7f;
             color: #ffffff;
             padding: 13px 25px;
             -webkit-border-radius: 5px;
@@ -6955,7 +6954,7 @@ Initial Setup
 
         .page-single {
             background-color: #020d18;
-            padding: 75px 0;
+            padding: 35px 0;
         }
 
         .social-btn {
@@ -6979,7 +6978,7 @@ Initial Setup
         .social-btn a.parent-btn {
             font-family: 'Dosis', sans-serif;
             font-size: 14px;
-            color: #dd003f;
+            color: #375a7f;
             font-weight: bold;
             text-transform: uppercase;
             margin-right: 35px;
@@ -6997,7 +6996,7 @@ Initial Setup
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             border-radius: 50%;
-            border: 1px solid #dd003f;
+            border: 1px solid #375a7f;
             margin-right: 10px;
             font-size: 16px;
         }
@@ -7027,7 +7026,7 @@ Initial Setup
             -o-transition: all 0.5s ease-out;
             transition: all 0.5s ease-out;
             padding: 12px;
-            background-color: #dd003f;
+            background-color: #375a7f;
             -webkit-border-radius: 3px;
             -moz-border-radius: 3px;
             border-radius: 3px;
@@ -7051,7 +7050,7 @@ Initial Setup
                 left: -10px;
                 border-bottom: 10px solid transparent;
                 border-top: 10px solid transparent;
-                border-right: 10px solid #dd003f;
+                border-right: 10px solid #375a7f;
                 /* Tam giác phải được đổ màu */
             }
 
@@ -7639,7 +7638,7 @@ Initial Setup
             color: #ffffff;
             font-weight: bold;
             text-transform: uppercase;
-            background: #dd003f;
+            background: #375a7f;
             width: 100%;
         }
 
@@ -7681,7 +7680,7 @@ Initial Setup
                 color: #ffffff;
                 font-weight: 300;
                 text-transform: none;
-                background-color: #dd003f;
+                background-color: #375a7f;
                 -webkit-border-radius: 3px;
                 -moz-border-radius: 3px;
                 border-radius: 3px;
@@ -8153,7 +8152,7 @@ Initial Setup
             }
 
             .overlay .close {
-                background-color: #dd003f;
+                background-color: #375a7f;
                 color: #ffffff;
                 opacity: 1;
                 padding: 4px 10px 6px 10px;
@@ -8275,7 +8274,7 @@ Initial Setup
             font-weight: bold;
             text-transform: uppercase;
             border: none;
-            background-color: #dd003f;
+            background-color: #375a7f;
             height: 42px;
             width: 100%;
             cursor: pointer;
@@ -8695,7 +8694,7 @@ Initial Setup
                 }
 
                 #status span:nth-child(2) {
-                    border: 5px solid #dd003f;
+                    border: 5px solid #375a7f;
                     border-top: 5px solid transparent;
                     top: 20px;
                     left: 20px;
@@ -8790,19 +8789,19 @@ Initial Setup
         }
 
         .buster-light .title-hd a.viewall:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .tabs ul.tab-links li a:hover,
         .buster-light ul.tab-links-2 li a:hover,
         .buster-light ul.tab-links-3 li a:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .tabs ul.tab-links li.active a,
         .buster-light ul.tab-links-2 li.active a,
         .buster-light ul.tab-links-3 li.active a {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .slick-dots li button:before {
@@ -8811,7 +8810,7 @@ Initial Setup
 
         .buster-light .slick-dots li button:hover:before,
         .buster-light .slick-dots li.slick-active button:before {
-            background-color: #dd003f;
+            background-color: #375a7f;
         }
 
         .buster-light .trailers {
@@ -8844,7 +8843,7 @@ Initial Setup
 
         .buster-light .slick-next:hover:before,
         .buster-light .slick-prev:hover:before {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .slick-next:before,
@@ -8870,11 +8869,11 @@ Initial Setup
             }
 
             .buster-light .sidebar .celebrities .celeb-item:hover h6 a {
-                color: #dd003f;
+                color: #375a7f;
             }
 
             .buster-light .sidebar .celebrities a.btn:hover {
-                color: #dd003f;
+                color: #375a7f;
             }
 
             .buster-light .sidebar .sb-search input {
@@ -8891,11 +8890,11 @@ Initial Setup
             }
 
                 .buster-light .sidebar .sb-cate ul li a:hover {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
             .buster-light .sidebar .sb-recentpost .recent-item h6 a:hover {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .blog-item-style-1 .blog-it-infor p {
@@ -8903,7 +8902,7 @@ Initial Setup
         }
 
         .buster-light .blog-item-style-1 .blog-it-infor h3 a:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .blog-item-style-2 .blog-it-infor p {
@@ -8911,11 +8910,11 @@ Initial Setup
         }
 
         .buster-light .blog-item-style-2:hover .blog-it-infor h3 a {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .latestnew .morenew .more-items .more-it h6 a:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .page-single {
@@ -8949,12 +8948,12 @@ Initial Setup
 
                 .buster-light .topbar-filter .list i.active,
                 .buster-light .topbar-filter .grid i.active {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
                 .buster-light .topbar-filter .list:hover i,
                 .buster-light .topbar-filter .grid:hover i {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
             .buster-light .topbar-filter .pagination2 {
@@ -8963,7 +8962,7 @@ Initial Setup
 
                 .buster-light .topbar-filter .pagination2 a.active,
                 .buster-light .topbar-filter .pagination2 a:hover {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
         .buster-light .movie-item-style-2 .mv-item-infor h6 a {
@@ -8984,11 +8983,11 @@ Initial Setup
         }
 
             .buster-light .movie-item-style-2 .mv-item-infor p a:hover {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .movie-item-style-2:hover h6 a {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .movie-single .movie-single-ct .mvcast-item .cast-it p {
@@ -8996,7 +8995,7 @@ Initial Setup
         }
 
         .buster-light .movie-single .movie-single-ct .mvcast-item .cast-it a:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .movie-single .movie-single-ct .mvcast-item .cast-it .series-it a {
@@ -9008,7 +9007,7 @@ Initial Setup
         }
 
         .buster-light .movie-single .movie-single-ct .mvsingle-item .vd-item:hover h6 a {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .movie-single .movie-single-ct .tab h3 {
@@ -9028,7 +9027,7 @@ Initial Setup
         }
 
         .buster-light .movie-single p a:hover {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .movie-single .sb-it h6 {
@@ -9061,7 +9060,7 @@ Initial Setup
             }
 
             .buster-light .title-hd-sm a:hover {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .form-style-1 {
@@ -9095,7 +9094,7 @@ Initial Setup
         }
 
         .buster-light .celebrity-items .ceb-item:hover h2 a {
-            color: #dd003f;
+            color: #375a7f;
         }
 
         .buster-light .ceb-item-style-2 .ceb-infor {
@@ -9112,7 +9111,7 @@ Initial Setup
             }
 
             .buster-light .ceb-item-style-2 .ceb-infor:hover h2 a {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .celebrity-form {
@@ -9136,7 +9135,7 @@ Initial Setup
             }
 
             .buster-light .blog-item-style-3:hover h3 a {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .blog-item-style-2 .blog-it-infor p {
@@ -9184,7 +9183,7 @@ Initial Setup
             }
 
                 .buster-light .blog-detail-ct .cmt-item a.rep-btn:hover {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
         .buster-light .blog-detail-ct .comment-form form input:not(.submit),
@@ -9199,7 +9198,7 @@ Initial Setup
 
             .buster-light .blog-detail-ct .comment-form form input:not(.submit):hover,
             .buster-light .blog-detail-ct .comment-form form textarea:not(.submit):hover {
-                border-color: #dd003f;
+                border-color: #375a7f;
             }
 
         .buster-light .userfav_list .movie-item-style-2 .mv-item-infor .describe {
@@ -9224,11 +9223,11 @@ Initial Setup
             }
 
                 .buster-light .user-information ul li a:hover {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
             .buster-light .user-information ul li.active a {
-                color: #dd003f;
+                color: #375a7f;
             }
 
         .buster-light .userrate {
@@ -9343,7 +9342,7 @@ Initial Setup
                 }
 
             header .navbar-default .navbar-nav li.btn a {
-                background-color: #dd003f;
+                background-color: #375a7f;
                 color: #ffffff;
                 padding: 11px 25px;
                 -webkit-border-radius: 20px;
@@ -9528,7 +9527,7 @@ Initial Setup
                 }
 
                 header#header-light .navbar-default .navbar-nav li a:hover {
-                    color: #dd003f;
+                    color: #375a7f;
                 }
 
                 header#header-light .navbar-default .navbar-nav .dropdown.first.open a {
@@ -9749,7 +9748,7 @@ Initial Setup
         footer .flex-parent-ft .flex-child-ft a.btn {
             font-family: 'Dosis', sans-serif;
             font-size: 14px;
-            color: #dd003f;
+            color: #375a7f;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -9862,6 +9861,15 @@ Initial Setup
         .modal-footer {
             border-top: none !important;
         }
+
+        .imagen-pelicula-lista{
+            max-height: 255px !important;
+            min-height: 255px !important;
+        }
+
+        .btn-new{
+            margin-bottom: 15px;
+        }
     </style>
     <section>
         <div>
@@ -9874,11 +9882,11 @@ Initial Setup
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-                            <a href="/MovieList?Id=0"  class="btn btn-primary">Cargar Película</a>
+                            <a href="/MovieList?Id=0"  class="btn btn-primary btn-new">Cargar Película</a>
 
 
                             <div class="topbar-filter fw">
-                                <p>Se encontraron <span><%= CountMovie %></span> en total</p>
+                                <p>Se encontraron <span><%= CountMovie %> películas</span> en total</p>
                             </div>
                             <div class="flex-wrap-movielist mv-grid-fw">
 
@@ -9890,14 +9898,16 @@ Initial Setup
                                     <ItemTemplate>
 
                                         <div class="movie-item-style-2 movie-item-style-1">
-                                            <img src="<%#: Item.Image %>" alt="">
+                                            <img src="<%#: Item.Image %>" alt="" class="imagen-pelicula-lista">
                                             <div class="hvr-inner">
-                                                <a href="/MovieList?Id=<%#: Item.MovieID %>" >Edit</a>
+                                                <a href="/MovieList?Id=<%#: Item.MovieID %>" >Editar</a>
                                             </div>
                                             <div class="mv-item-infor">
                                                 <h6><a href="#"><%#: Item.Title %></a></h6>
-                                                <p class="rate"><i class="ion-android-star"></i><span><%#: Item.Rate %></span> /10</p>
-
+                                                <div class="cate">
+                                                    <span class="blue"><a href="#"><%#: Item.Genre.GenreName %></a></span>
+                                                </div>
+                                                <p class="rate"><i class="fa fa-star" aria-hidden="true"></i><span><%#: Item.Rate %></span> /10</p>
                                             </div>
                                         </div>
 

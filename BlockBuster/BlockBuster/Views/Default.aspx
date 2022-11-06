@@ -9856,7 +9856,7 @@ Initial Setup
         }
     </style>
 
-    <section style="margin-top: 120px;">
+    <section>
         <div class="container">
             <div class="row">
                 <%--<form action="/" method="post"></form>--%>
