@@ -72,7 +72,7 @@ namespace BlockBuster
 
         public IEnumerable<Movie> GetMovies()
         {
-            return _movieService.GetAllActives();
+            return _movieService.GetAllActives().OrderBy(x => x.Title);
         }
 
         #endregion
