@@ -33,12 +33,7 @@
 						            <div class="row">
 						            	<div class="col-md-8 col-sm-12 col-xs-12">
 						            		<p><asp:Label ID="TextBoxDescripcion" runat="server" Text="Label"></asp:Label></p>
-						            		<div class="title-hd-sm">
-												<h4>Trailer</h4>
-											</div>
-											<div class="mvsingle-item ov-item">
-												<iframe width="560" height="315" id="trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
-											</div>
+						            		
 						            	</div>
 						            	<div class="col-md-4 col-xs-12 col-sm-12">
 						            		<div class="sb-it">
@@ -62,6 +57,14 @@
 						            			<p><asp:Label ID="TextBoxDuracion" runat="server" Text="Label"></asp:Label> min</p>
 						            		</div>
 						            	</div>
+                                        <div class="col-xs-12">
+											<div class="title-hd-sm">
+												<h4>Trailer</h4>
+											</div>
+											<div class="mvsingle-item ov-item">
+												<iframe width="560" height="315" id="trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+											</div>
+                                        </div>
 						            </div>
 						        </div>
 						    </div>
