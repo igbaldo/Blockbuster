@@ -133,9 +133,10 @@
         if (params.get('Id') > 0) {
             $('#exampleModalCenter').modal('toggle');
             $('#exampleModalLongTitle').text('Editar Película');
+            $('#rangeval').html('  ' + $('#MainContent_TextBoxPuntuacion').val());
         } else if (params.get('Id') == 0){
             $('#exampleModalCenter').modal('toggle');
-            $('#Button1').hide(1000);
+            $('#MainContent_Button1').hide();
         }
     </script>
 </asp:Content>
