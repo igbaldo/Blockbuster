@@ -42,11 +42,12 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <a href="/GenreList?Id=0"  class="btn btn-primary btn-new">Cargar Género</a>
-
+                            
                             <div class="topbar-filter fw">
-                                <p>Se encontraron <span><!-- Numero genero --> géneros</span> en total</p>
+                                <p>Se encontraron <span><%= GenreCount %></span> géneros en total</p>
                             </div>
 
+                            <asp:Label ID="Messge" runat="server"></asp:Label>
 
                             <div>
                                 <asp:GridView ID="GridViewGenre" runat="server" AutoGenerateColumns="false" ItemType="BlockBuster.Genre">
@@ -56,6 +57,11 @@
                                           <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
                                             <ItemTemplate>
                                                  <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary btn-edit-par">Editar</a>
+                                             </ItemTemplate>                  
+                                            </asp:TemplateField>
+                                          <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
+                                            <ItemTemplate>
+                                                 <a href="/GenreList?DeleteId=<%#: Item.GenreID %>"  class="btn btn-danger btn-edit-par">Eliminar</a>
                                              </ItemTemplate>                  
                                             </asp:TemplateField>   
                                     </Columns>

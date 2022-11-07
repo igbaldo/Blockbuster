@@ -24,7 +24,7 @@
                                 <asp:ListView ID="ListView1"
                                     ItemType="BlockBuster.Movie"
                                     runat="server"
-                                    SelectMethod="GetMovies" DeleteMethod="DeleteMovie">
+                                    SelectMethod="GetMovies">
 
                                     <ItemTemplate>
 
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="formControlRange">Puntuación</label><span id="rangeval">  </span>
-                            <i class="fa fa-star" aria-hidden="true"></i><asp:TextBox type="range" min="0"  max="10" step="0.5" onInput="$('#rangeval').html('  ' + $(this).val())" class="form-control-range" ID="TextBoxPuntuacion" runat="server"></asp:TextBox>
+                            <i class="fa fa-star" aria-hidden="true"></i><asp:TextBox type="range" min="0"  max="10" step="1" onInput="$('#rangeval').html('  ' + $(this).val())" class="form-control-range" ID="TextBoxPuntuacion" runat="server"></asp:TextBox>
                             <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="La puntuacion debe ser un valor entre 0 y 10" MinimumValue="0" MaximumValue="10" Type="Double" ForeColor="Red" ControlToValidate="TextBoxPuntuacion"></asp:RangeValidator>
                         </div>
                         <div class="form-group col-md-6">
@@ -135,6 +135,7 @@
             $('#exampleModalLongTitle').text('Editar Película');
         } else if (params.get('Id') == 0){
             $('#exampleModalCenter').modal('toggle');
+            $('#Button1').hide(1000);
         }
     </script>
 </asp:Content>

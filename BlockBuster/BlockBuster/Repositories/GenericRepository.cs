@@ -43,5 +43,28 @@ namespace BlockBuster.Repositories
                 context.SaveChanges();
             }
         }
+
+        internal void Delete(int id)
+        {
+            using (var context = new BlockBusterContext())
+            {
+                var genre = context.Genres.Find(id);
+                context.Genres.Remove(genre);
+                context.SaveChanges();
+            }
+        }
+
+        internal bool ValidateDelete(int genreId)
+        {
+            using (var context = new BlockBusterContext())
+            {
+                var gen = context.Genres.FirstOrDefault(x => x.GenreID == genreId);
+
+                if(gen != null) 
+                    return context.Genres.FirstOrDefault(x => x.GenreID == genreId).Movies.Count() == 0;
+
+                return true;
+            }
+        }
     }
 }

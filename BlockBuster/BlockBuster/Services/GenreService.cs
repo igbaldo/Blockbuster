@@ -22,7 +22,7 @@ namespace BlockBuster.Repositories
 
         public void Delete(int entityId)
         {
-            throw new NotImplementedException();
+            _genreRepository.Delete(entityId);
         }
 
         public IEnumerable<Genre> GetAll()
@@ -46,6 +46,11 @@ namespace BlockBuster.Repositories
                 _genreRepository.Update(entity);
             else
                 _genreRepository.Add(entity);
+        }
+
+        internal bool ValidateDelete(int genreId)
+        {
+            return _genreRepository.ValidateDelete(genreId);
         }
     }
 }

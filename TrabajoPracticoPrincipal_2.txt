@@ -36,8 +36,6 @@ Elegir un dominio de aplicación a fin de realizar una sistema cuya funcionalida
 
     - Usar validación de campos segun se requiera. 
 
-    - La aplicación debe tener cobertura de tests unitarios.
-
     - Preferentemente, la arquitectura debe hacer uso de algun patrón de diseño que se verá en clase.
 
 
