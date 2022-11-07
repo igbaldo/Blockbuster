@@ -34,7 +34,7 @@
                                                 <a href="/MovieList?Id=<%#: Item.MovieID %>" >Editar</a>
                                             </div>
                                             <div class="mv-item-infor">
-                                                <h6><a href="#"><%#: Item.Title %></a></h6>
+                                                <h6><a href="/Detail?id=<%#: Item.MovieID %>"><%#: Item.Title %></a></h6>
                                                 <div class="cate">
                                                     <span class="blue"><a href="#"><%#: Item.Genre.GenreName %></a></span>
                                                 </div>

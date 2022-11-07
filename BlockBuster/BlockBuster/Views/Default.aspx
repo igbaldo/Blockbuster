@@ -16,7 +16,7 @@
                     <asp:Button ID="SearchButton" runat="server" type="submit" class="btn btn-primary" Text="Search" OnClick="SearchButton_Click" />
                 </div>--%>
                 <div class="form-group col-md-2 mx-0 px-0">
-                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Search" OnClick="SearchButton_Click" />
+                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Buscar" OnClick="SearchButton_Click" />
                 </div>
             </div>
         </div>

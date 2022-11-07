@@ -5272,6 +5272,8 @@ ul {
             color: #ffffff;
             font-weight: 700;
             text-transform: uppercase;
+            text-decoration: none;
+            cursor: auto;
         }
 
     .cate .blue {
@@ -10132,3 +10134,23 @@ body {
     margin-bottom: 15px;
 }
 
+#detail h6{
+    color: #fff;
+    font-weight: 600;
+}
+
+#detail h1 span {
+    color: #8cc4ff;
+    font-weight: 800;
+}
+
+.estrella {
+    color: #f5b50a;
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.amarillo {
+    font-weight: 700;
+    color: #f5b50a;
+}

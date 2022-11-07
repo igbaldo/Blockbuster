@@ -53,7 +53,6 @@ namespace BlockBuster
 
         private void BindFields(Movie movie)
         {
-            Id.Value = movie.MovieID.ToString();
             TextBoxPelicula.Text = movie.Title;
             TextBoxDescripcion.Text = movie.Description;
             TextBoxDuracion.Text = movie.Duration?.ToString();
@@ -61,7 +60,7 @@ namespace BlockBuster
             TextBoxDirector.Text = movie.Director;
             TextBoxReparto.Text = movie.Cast;
             TextBoxTrailer.Text = movie.TrailerLink;
-            TextBoxImg.Text = movie.Image;
+            TextBoxImg.ImageUrl = movie.Image;
             TextBoxAnio.Text = movie.Year.ToString();
             GenresList.SelectedValue = movie.GenreID.ToString();
         }
