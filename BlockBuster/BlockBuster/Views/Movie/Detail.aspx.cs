@@ -30,20 +30,6 @@ namespace BlockBuster
 
         #region Private Methods
 
-        private void CmbLoad()
-        {
-            foreach (var gen in _genreService.GetAll())
-            {
-                var item = new ListItem
-                {
-                    Value = gen.GenreID.ToString(),
-                    Text = gen.GenreName.ToString()
-
-                };
-                GenresList.Items.Add(item);
-            }
-        }
-
         private void LoadMovie(int movieId)
         {
             Movie movie = new Movie();
@@ -62,7 +48,7 @@ namespace BlockBuster
             TextBoxTrailer.Text = movie.TrailerLink;
             TextBoxImg.ImageUrl = movie.Image;
             TextBoxAnio.Text = movie.Year.ToString();
-            GenresList.SelectedValue = movie.GenreID.ToString();
+            TextBoxGenero.Text = movie.Genre.GenreName;
         }
 
         #endregion
@@ -73,8 +59,6 @@ namespace BlockBuster
         {
             if (!Page.IsPostBack)
             {
-                CmbLoad();
-
                 if (Request.QueryString["Id"] != null && Request.QueryString["Id"] != "0")
                 {
                     LoadMovie(Convert.ToInt32(Request.QueryString["Id"]));

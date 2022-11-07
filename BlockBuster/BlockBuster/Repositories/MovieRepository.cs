@@ -19,6 +19,14 @@ namespace BlockBuster.Repositories
             }
         }
 
+        public override Movie GetById(int movieId)
+        {
+            using (var context = new BlockBusterContext())
+            {
+                return context.Movies.Where(x => x.MovieID == movieId).Include("Genre").FirstOrDefault();
+            }
+        }
+
         internal IEnumerable<Movie> GetByFilters(string searchPatter, int searchGenre)
         {
             using (var context = new BlockBusterContext())

@@ -51,7 +51,7 @@
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>Género:</h6>
-						            			<p id="genero"></p> <!-- ACA VA EL GENERO SOLO TEXTO -->
+						            			<p><asp:Label ID="TextBoxGenero" runat="server" Text="Label"></asp:Label></p> <!-- ACA VA EL GENERO SOLO TEXTO -->
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>Año lanzamiento:</h6>

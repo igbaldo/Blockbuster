@@ -27,7 +27,7 @@ namespace BlockBuster.Repositories
             }
         }
 
-        public TEntity GetById(int id)
+        public virtual TEntity GetById(int id)
         {
             using (var context = new BlockBusterContext())
             {
