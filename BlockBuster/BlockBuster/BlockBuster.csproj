@@ -168,6 +168,7 @@
     <Content Include="Views\Genre\GenreAddOrEdit.aspx" />
     <Content Include="Views\Genre\GenreList.aspx" />
     <Content Include="Views\Movie\MovieAddOrEdit.aspx" />
+    <Content Include="Views\Movie\Detail.aspx" />
     <Content Include="Views\Movie\MovieList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="Views\Movie\MovieAddOrEdit.aspx.designer.cs">
       <DependentUpon>MovieAddOrEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movie\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Movie\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Movie\MovieList.aspx.cs">
       <DependentUpon>MovieList.aspx</DependentUpon>

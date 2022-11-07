@@ -28,6 +28,7 @@ namespace BlockBuster
             routes.MapPageRoute("Contact", "Contact", "~/Views/Contact.aspx");
             routes.MapPageRoute("Default", "Default", "~/Views/Default.aspx");
             routes.MapPageRoute("MovieList","Movielist","~/Views/Movie/MovieList.aspx");
+            routes.MapPageRoute("Detail", "Detail", "~/Views/Movie/Detail.aspx");
             routes.MapPageRoute("MovieAddOrEdit","MovieAddOrEdit","~/Views/Movie/MovieAddOrEdit.aspx");
             routes.MapPageRoute("GenreList", "GenreList", "~/Views/Genre/GenreList.aspx");
             routes.MapPageRoute("GenreAddOrEdit", "GenreAddOrEdit", "~/Views/Genre/GenreAddOrEdit.aspx");
