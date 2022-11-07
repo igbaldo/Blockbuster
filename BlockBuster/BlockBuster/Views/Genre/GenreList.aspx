@@ -25,6 +25,21 @@
         .table-striped > tbody > tr:nth-of-type(odd) .btn-edit-par {
             background-color: #020d18 !important;
         }
+        table tr td:nth-child(3){
+            text-align: right !important;
+        }
+        .error-mensaje{
+            margin-bottom: 30px;
+        }
+        .icon-edit{
+            color: #05f6ff;
+            font-size: 30px;
+            margin-right: 30px
+        }
+        .icon-trash{
+            color: red;
+            font-size: 30px;
+        }
     </style>
     <section>
         <div>
@@ -47,7 +62,9 @@
                                 <p>Se encontraron <span><%= GenreCount %></span> géneros en total</p>
                             </div>
 
-                            <asp:Label ID="Messge" runat="server"></asp:Label>
+                            <div class="col-md-12" style="height: 50px;">
+                                <asp:Label ID="Messge" runat="server" class="alert alert-danger error-mensaje"></asp:Label>
+                            </div>
 
                             <div>
                                 <asp:GridView ID="GridViewGenre" runat="server" AutoGenerateColumns="false" ItemType="BlockBuster.Genre">
@@ -56,14 +73,11 @@
                                         <asp:BoundField DataField="GenreName" HeaderText="Género" />
                                           <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
                                             <ItemTemplate>
-                                                 <a href="/GenreList?Id=<%#: Item.GenreID %>"  class="btn btn-primary btn-edit-par">Editar</a>
+                                                 <a href="/GenreList?Id=<%#: Item.GenreID %>" data-toggle="tooltip" data-placement="top" title="Editar género"><i class="fa fa-pencil-square-o icon-edit" aria-hidden="true"></i></a>
+                                                 <a href="/GenreList?DeleteId=<%#: Item.GenreID %>" data-toggle="tooltip" data-placement="top" title="Borrar género"><i class="fa fa-trash-o icon-trash" aria-hidden="true"></i></a>
+
                                              </ItemTemplate>                  
                                             </asp:TemplateField>
-                                          <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
-                                            <ItemTemplate>
-                                                 <a href="/GenreList?DeleteId=<%#: Item.GenreID %>"  class="btn btn-danger btn-edit-par">Eliminar</a>
-                                             </ItemTemplate>                  
-                                            </asp:TemplateField>   
                                     </Columns>
                                 </asp:GridView>      
                             </div>
@@ -111,5 +125,15 @@
             }
 
             $("table").addClass("table table-striped");
+
+            console.log('algo', $("#MainContent_Messge").text());
+
+            if ($("#MainContent_Messge").text() != '') {
+                $("#MainContent_Messge").show();
+            } else {
+                $("#MainContent_Messge").hide();
+            }
+
+            
         </script>
 </asp:Content>
